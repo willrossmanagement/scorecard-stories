@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scorecard Stories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #faf6ee;
+      color: #1a1612;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: #fdf6e8;
+      padding: 40px 24px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-bottom: 1px solid #e4dbd0;
+    }
+
+    .hero-rule {
+      width: 36px;
+      height: 2px;
+      background: #0e3322;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: #0e3322;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title .italic-gold {
+      font-style: italic;
+      color: #b07d2a;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: #7a6f65;
+      margin-bottom: 18px;
+      max-width: 360px;
+      line-height: 1.5;
+    }
+
+    .hero-description {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: #7a6f65;
+      max-width: 420px;
+      line-height: 1.65;
+      margin-bottom: 26px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    .btn-primary {
+      background: #0e3322;
+      color: #f2c85b;
+      border: 1.5px solid #0e3322;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #0e3322;
+      border: 1.5px solid #0e3322;
+    }
+
+    .hero-coverage {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #7a6f65;
+    }
+
+    .hero-coverage strong {
+      color: #0e3322;
+      font-weight: 600;
+    }
+
+    /* ── EPISODES ── */
+    .episodes {
+      background: #faf6ee;
+      padding: 28px 24px;
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a6f65;
+      margin-bottom: 16px;
+    }
+
+    .episode-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .episode-card {
+      background: #ffffff;
+      border: 1px solid #e4dbd0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .episode-card:hover {
+      border-color: #b07d2a;
+      box-shadow: 0 2px 12px rgba(14, 51, 34, 0.07);
+    }
+
+    .episode-card.coming-soon {
+      opacity: 0.55;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .episode-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .episode-badge {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: #0e3322;
+      color: #f2c85b;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .episode-arrow {
+      font-size: 16px;
+      color: #7a6f65;
+      line-height: 1;
+    }
+
+    .episode-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1612;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .episode-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      color: #7a6f65;
+      background: #fdf6e8;
+      border: 1px solid #e8d8b0;
+      border-radius: 999px;
+      padding: 3px 9px;
+      white-space: nowrap;
+    }
+
+    .chip strong {
+      color: #0e3322;
+      font-weight: 600;
+    }
+
+    .coming-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: #7a6f65;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    /* ── SUBSCRIBE ── */
+    .subscribe {
+      padding: 0 24px 28px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .subscribe-card {
+      background: #ffffff;
+      border: 1.5px solid #e8c876;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .subscribe-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1612;
+      margin-bottom: 6px;
+    }
+
+    .subscribe-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #7a6f65;
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .subscribe-input {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #1a1612;
+      background: #faf6ee;
+      border: 1px solid #e4dbd0;
+      border-radius: 999px;
+      padding: 9px 16px;
+      outline: none;
+      width: 220px;
+      max-width: 100%;
+    }
+
+    .subscribe-input::placeholder {
+      color: #b0a89e;
+    }
+
+    .subscribe-input:focus {
+      border-color: #b07d2a;
+    }
+
+    .subscribe-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      background: #0e3322;
+      color: #f2c85b;
+      border: none;
+      border-radius: 999px;
+      padding: 9px 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+
+    .subscribe-btn:hover {
+      opacity: 0.85;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0e3322;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: #f2c85b;
+      margin-bottom: 8px;
+    }
+
+    .footer-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #7a6f65;
+      margin-bottom: 6px;
+    }
+
+    .footer-copyright {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: #4a4540;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .hero-tagline {
+        font-size: 14px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 200px;
+        text-align: center;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .subscribe-input {
+        width: 100%;
+      }
+
+      .subscribe-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <hr class="hero-rule" />
+    <h1 class="hero-title">Scorecard <span class="italic-gold">Stories</span></h1>
+    <p class="hero-tagline">The weekly dramas, disasters and heroics of club competition golf.</p>
+    <p class="hero-description">Every Saturday, the data exists. Almost no club does anything interesting with it. We do.</p>
+    <div class="hero-buttons">
+      <a href="#subscribe" class="btn btn-primary">Subscribe free</a>
+      <a href="episodes/episode-02-may30-2026.html" class="btn btn-secondary">Read the latest</a>
+    </div>
+    <p class="hero-coverage">Currently covering: <strong>Balgowlah Golf Club</strong></p>
+  </section>
+
+  <!-- EPISODES -->
+  <section class="episodes">
+    <p class="section-label">Latest Episodes</p>
+    <div class="episode-list">
+
+      <!-- Episode 1 -->
+      <a href="episodes/episode-01-may23-2026.html" class="episode-card">
+        <div class="episode-card-top">
+          <span class="episode-badge">Episode 1 · May 23</span>
+          <span class="episode-arrow">›</span>
+        </div>
+        <p class="episode-title">Ferguson Holes Out. Ryan Takes The Countback.</p>
+        <div class="episode-chips">
+          <span class="chip">Stableford</span>
+          <span class="chip"><strong>82</strong> players</span>
+          <span class="chip">Winner <strong>38 pts</strong></span>
+          <span class="chip">Avg <strong>29.9</strong></span>
+        </div>
+      </a>
+
+      <!-- Episode 2 -->
+      <a href="episodes/episode-02-may30-2026.html" class="episode-card">
+        <div class="episode-card-top">
+          <span class="episode-badge">Episode 2 · May 30</span>
+          <span class="episode-arrow">›</span>
+        </div>
+        <p class="episode-title">The Rain Came. Williams Didn't Care.</p>
+        <div class="episode-chips">
+          <span class="chip">Stableford</span>
+          <span class="chip"><strong>77</strong> players</span>
+          <span class="chip">Winner <strong>42 pts</strong></span>
+          <span class="chip">Avg <strong>32.0</strong></span>
+        </div>
+      </a>
+
+      <!-- Episode 3 — Coming soon -->
+      <div class="episode-card coming-soon">
+        <div class="episode-card-top">
+          <span class="episode-badge">Episode 3 · Jun 6</span>
+          <span class="episode-arrow">›</span>
+        </div>
+        <p class="episode-title">Episode 3</p>
+        <p class="coming-label">Coming this Sunday</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe" id="subscribe">
+    <div class="subscribe-card">
+      <p class="subscribe-heading">Never miss an edition.</p>
+      <p class="subscribe-sub">Subscribers get each episode 48 hours before it goes public. Free, always.</p>
+      <form class="subscribe-form" action="#" method="post">
+        <input class="subscribe-input" type="email" name="email" placeholder="Your email address" autocomplete="email" />
+        <button class="subscribe-btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-name">Scorecard Stories</p>
+    <p class="footer-tagline">The weekly golf newsletter · scorecardstories.com.au</p>
+    <p class="footer-copyright">© 2026 Scorecard Stories</p>
+  </footer>
+
+</body>
+</html>
