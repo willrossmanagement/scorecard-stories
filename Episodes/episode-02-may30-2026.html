@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scorecard Stories @ Balgowlah GC | 30 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #faf6ee;
+  --sand: #e8e0d2;
+  --green-dark: #0e3322;
+  --green-deeper: #071a12;
+  --green-mid: #174a31;
+  --green-light: #1e5c3d;
+  --gold: #f2c85b;
+  --gold-light: #f2d07a;
+  --gold-pale: #fdf3d8;
+  --stone: #1a1612;
+  --muted: #7a6f65;
+  --red-dark: #6b1818;
+  --sky: #e8f4fd;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--sand);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  width: min(700px, 100%);
+  margin: 28px auto;
+  background: var(--cream);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,.22);
+}
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* MASTHEAD */
+.masthead {
+  background: var(--cream);
+  padding: 36px 28px 24px;
+  text-align: center;
+}
+.masthead-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--green-dark);
+  margin: 0 auto 16px;
+}
+.masthead-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1;
+  letter-spacing: -.5px;
+}
+.masthead-title em {
+  font-style: italic;
+  color: #b07d2a;
+}
+.masthead-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 8px 0 20px;
+}
+.club-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.club-rule {
+  flex: 1;
+  height: 1px;
+  background: #b07d2a;
+  opacity: .45;
+  max-width: 80px;
+}
+.club-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+}
+.badge-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.badge {
+  background: var(--green-dark);
+  color: rgba(255,255,255,.75);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* STATS BAR */
+.stats-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+.stat-pill {
+  background: var(--green-dark);
+  border-radius: 20px;
+  padding: 16px 12px;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.38);
+  margin-top: 4px;
+}
+
+/* BASE CARD */
+.card {
+  background: var(--white);
+  border: 1px solid #e4dbd0;
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 2px 14px rgba(0,0,0,.04);
+}
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.body-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5a5148;
+}
+
+/* WINNER CARD */
+.winner-card {
+  background: var(--gold-pale);
+  border: 1px solid #e8c876;
+  border-radius: 28px;
+  padding: 28px 24px 24px;
+}
+.winner-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.winner-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.0;
+  margin-bottom: 16px;
+}
+.winner-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a4038;
+  margin-bottom: 24px;
+}
+.winner-body p + p {
+  margin-top: 12px;
+}
+
+/* LEADERBOARD */
+.leaderboard {
+  background: linear-gradient(175deg, #174a31, #0e3322);
+  border-radius: 20px;
+  border: 1px solid rgba(201,151,58,.45);
+  overflow: hidden;
+}
+.lb-header {
+  background: #1a4731;
+  padding: 14px 16px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.lb-title-block {}
+.lb-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.lb-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.35);
+  margin-top: 3px;
+}
+.lb-badge {
+  background: rgba(242,208,122,.15);
+  border: 1px solid rgba(242,208,122,.4);
+  color: var(--gold-light);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  align-self: center;
+}
+.lb-col-headers {
+  background: rgba(0,0,0,.15);
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  padding: 6px 16px;
+}
+.lb-col-headers span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.28);
+}
+.lb-col-headers span:first-child { text-align: center; }
+.lb-col-headers span:last-child { text-align: right; }
+.lb-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  padding: 10px 16px;
+  align-items: center;
+}
+.lb-pos {
+  text-align: center;
+}
+.lb-pos-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--green-dark);
+}
+.lb-pos-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.35);
+}
+.lb-player-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+.lb-hcp-badge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  color: rgba(255,255,255,.35);
+  margin-top: 2px;
+}
+.lb-pts {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--gold-light);
+  text-align: right;
+}
+.lb-countback-note {
+  padding: 10px 16px 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* FIELD MAP */
+.field-map {
+  background: #f5f1eb;
+  border: 1px solid #ddd5c6;
+  border-radius: 28px;
+  padding: 22px;
+}
+.fm-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.fm-blurb {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.band-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.band-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green-dark);
+  width: 72px;
+  flex-shrink: 0;
+}
+.band-track {
+  flex: 1;
+  height: 20px;
+  background: #e4dbd0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.band-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+.band-right {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--stone);
+  white-space: nowrap;
+  min-width: 130px;
+  text-align: left;
+}
+.band-count {
+  font-weight: 700;
+}
+.band-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--muted);
+}
+.dnf-divider {
+  border: none;
+  border-top: 1px dashed #c8bfb2;
+  margin: 12px 0 10px;
+}
+
+/* CUT LINE */
+.cut-card {
+  background: var(--green-dark);
+  border: 1px solid rgba(201,151,58,.25);
+  border-radius: 28px;
+  padding: 22px;
+}
+.cut-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 8px;
+}
+.cut-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.cut-headline .cut-num {
+  color: var(--gold);
+  font-size: 26px;
+}
+.cut-subline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 16px;
+}
+.cut-zone {
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+}
+.cut-zone-green {
+  background: rgba(34,197,94,.08);
+  border: 1px solid rgba(34,197,94,.25);
+}
+.cut-zone-red {
+  background: rgba(239,68,68,.07);
+  border: 1px solid rgba(239,68,68,.2);
+}
+.cut-zone-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+.cut-zone-label-green { color: rgba(74,222,128,.6); }
+.cut-zone-label-red { color: rgba(252,165,165,.6); }
+.cut-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cut-pill {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.cut-pill-green {
+  background: rgba(34,197,94,.15);
+  color: rgba(134,239,172,.9);
+}
+.cut-pill-red {
+  background: rgba(239,68,68,.12);
+  color: rgba(252,165,165,.9);
+}
+.cut-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.cut-divider-line {
+  flex: 1;
+  border-top: 1.5px dashed rgba(201,151,58,.4);
+}
+.cut-divider-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(242,200,91,.6);
+  border: 1px solid rgba(201,151,58,.3);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.mini-tragedy-divider {
+  border: none;
+  border-top: 1px dashed rgba(201,151,58,.3);
+  margin: 14px 0 10px;
+}
+.mini-tragedy {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.6;
+}
+
+/* VILLAIN HOLES */
+.villain-card {
+  background: linear-gradient(140deg, #6b1818, #1a0808);
+  border-radius: 28px;
+  padding: 22px;
+}
+.villain-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 8px;
+}
+.villain-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.villain-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 18px;
+}
+.villain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.villain-badge-wrap {
+  margin-bottom: 6px;
+}
+.villain-badge {
+  display: inline-block;
+  background: rgba(252,165,165,.12);
+  color: #fca5a5;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+.villain-hole-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.vh-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.vh-hole-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+}
+.vh-par-si {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.35);
+}
+.vh-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+.vh-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.vh-stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+}
+.vh-stat-value-hero {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fca5a5;
+}
+.vh-stat-value {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(252,165,165,.8);
+}
+
+/* CHAOS CARD */
+.chaos-card {
+  background: var(--white);
+  border: 2px solid #f0c060;
+  border-radius: 28px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+.chaos-watermark {
+  position: absolute;
+  font-size: 72px;
+  opacity: .08;
+  right: 16px;
+  top: 8px;
+  line-height: 1;
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+.chaos-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.chaos-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5a5148;
+  margin-bottom: 18px;
+}
+.chaos-stats {
+  display: flex;
+  gap: 8px;
+}
+.chaos-stat-pill {
+  flex: 1;
+  background: #f9f5eb;
+  border: 1px solid #e8d8a0;
+  border-radius: 20px;
+  padding: 12px 0;
+  text-align: center;
+}
+.chaos-stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.chaos-stat-value {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--stone);
+}
+
+/* BIRDIE COUNTER */
+.birdie-card {
+  background: #fdf3d8;
+  border: 2px solid #e8c876;
+  border-radius: 28px;
+  padding: 28px 22px 22px;
+  text-align: center;
+}
+.birdie-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #b07d2a;
+  margin-bottom: 4px;
+}
+.birdie-count {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 88px;
+  font-weight: 700;
+  color: #b07d2a;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.birdie-made {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4a4038;
+  margin-bottom: 4px;
+}
+.birdie-season {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #9a8f85;
+  margin-bottom: 14px;
+}
+.birdie-divider {
+  width: 40px;
+  height: 1px;
+  background: #e0d5c5;
+  margin: 0 auto 12px;
+}
+.birdie-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #9a8f85;
+}
+
+/* QUIETLY NOTED */
+.qn-card {
+  background: var(--stone);
+  border: 1px solid var(--stone);
+  border-radius: 28px;
+  padding: 22px;
+}
+.qn-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 4px;
+}
+.qn-subhead {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 22px;
+}
+.qn-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+.qn-item:last-child { margin-bottom: 0; }
+.qn-stat {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  width: 64px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.qn-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255,255,255,.65);
+  padding-top: 6px;
+}
+
+/* FORM WATCH */
+.form-card {
+  background: var(--cream);
+  border: 1px solid #e4dbd0;
+  border-radius: 28px;
+  padding: 22px;
+}
+.form-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+.form-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5a5148;
+}
+.form-divider {
+  border: none;
+  border-top: 1px solid #e4dbd0;
+  margin: 14px 0;
+}
+
+/* SHARPSHOOTER */
+.sharp-card {
+  background: var(--white);
+  border: 1px solid #e4dbd0;
+  border-radius: 28px;
+  padding: 22px;
+}
+.sharp-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.sharp-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5a5148;
+}
+
+/* FINAL WORD */
+.final-card {
+  background: var(--green-dark);
+  border: 1px solid rgba(201,151,58,.3);
+  border-radius: 28px;
+  padding: 28px 24px 20px;
+}
+.final-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.3);
+  margin-bottom: 12px;
+}
+.final-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 27px;
+  font-weight: 400;
+  color: rgba(255,255,255,.88);
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+.final-next {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+.final-footer {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.25);
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 14px;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .page { margin: 0; border-radius: 0; }
+  .masthead { padding: 28px 20px 18px; }
+  .masthead-title { font-size: 42px; }
+  .card, .winner-card, .cut-card, .villain-card, .chaos-card,
+  .birdie-card, .qn-card, .form-card, .sharp-card, .final-card,
+  .field-map { padding: 18px; }
+  .winner-headline { font-size: 36px; }
+  .villain-grid { grid-template-columns: 1fr; }
+  .cut-pills { gap: 5px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-rule"></div>
+    <div class="masthead-title">Scorecard <em>Stories</em></div>
+    <div class="masthead-tagline">The weekly dramas, disasters and heroics of club competition golf. Buckle up.</div>
+    <div class="club-row">
+      <div class="club-rule"></div>
+      <div class="club-name">Balgowlah Golf Club</div>
+      <div class="club-rule"></div>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Episode 2</span>
+      <span class="badge">30 May 2026</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-pill">
+        <div class="stat-number">77</div>
+        <div class="stat-label">Field</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-number">42</div>
+        <div class="stat-label">Winning Pts</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-number">32.0</div>
+        <div class="stat-label">Field Avg</div>
+      </div>
+    </div>
+
+    <!-- WINNER STORY -->
+    <section class="winner-card">
+      <div class="winner-name">🏆 Winner Story</div>
+      <div class="winner-headline">Hole 6 Said No. Williams Had Other Ideas.</div>
+      <div class="winner-body">
+        <p>Richard Williams picked up on Hole 6, stroke index 1, the hardest hole on the course. He still won. Front nine: 19 points. Not pretty, but survivable. Then something clicked at the turn and he came home in 23, the second-best back nine in the field. His best moment was a birdie on Hole 10, the opening par-3 of the back, where he holed out for a gross 2 and four stableford points. That hole set the tone for everything that followed.</p>
+        <p>Matt Andrade pushed hard on 41 points, a tremendous effort off a handicap of 30. But Williams had one more in the bag. He finished on 42, ten above the field average, and won by a point. Three players finished on 40, with the back nine separating them: Pribicevic claimed third with 24 back-nine points, Ewing fourth on 22, McPherson fifth on 20.</p>
+      </div>
+
+      <!-- LEADERBOARD -->
+      <div class="leaderboard">
+        <div class="lb-header">
+          <div class="lb-title-block">
+            <div class="lb-title">Leaderboard</div>
+            <div class="lb-subtitle">30 May 2026 &middot; Balgowlah GC &middot; Stableford</div>
+          </div>
+          <div class="lb-badge">Top 10</div>
+        </div>
+        <div class="lb-col-headers">
+          <span>Pos</span><span>Player</span><span style="text-align:right">Pts</span>
+        </div>
+
+        <!-- Pos 1 -->
+        <div class="lb-row" style="opacity:1.0">
+          <div class="lb-pos"><div class="lb-pos-circle">1</div></div>
+          <div><div class="lb-player-name">Richard Williams</div><div class="lb-hcp-badge">hcp 13</div></div>
+          <div class="lb-pts">42</div>
+        </div>
+        <!-- Pos 2 -->
+        <div class="lb-row" style="opacity:1.0">
+          <div class="lb-pos"><div class="lb-pos-num">2</div></div>
+          <div><div class="lb-player-name">Matt Andrade</div><div class="lb-hcp-badge">hcp 30</div></div>
+          <div class="lb-pts">41</div>
+        </div>
+        <!-- Pos 3 -->
+        <div class="lb-row" style="opacity:1.0">
+          <div class="lb-pos"><div class="lb-pos-num">3</div></div>
+          <div><div class="lb-player-name">Mikael Pribicevic</div><div class="lb-hcp-badge">hcp 16</div></div>
+          <div class="lb-pts">40</div>
+        </div>
+        <!-- Pos 4 -->
+        <div class="lb-row" style="opacity:0.95">
+          <div class="lb-pos"><div class="lb-pos-num">4</div></div>
+          <div><div class="lb-player-name">Russell J Ewing</div><div class="lb-hcp-badge">hcp 14</div></div>
+          <div class="lb-pts">40</div>
+        </div>
+        <!-- Pos 5 -->
+        <div class="lb-row" style="opacity:0.95">
+          <div class="lb-pos"><div class="lb-pos-num">5</div></div>
+          <div><div class="lb-player-name">Bronson McPherson</div><div class="lb-hcp-badge">hcp 14</div></div>
+          <div class="lb-pts">40</div>
+        </div>
+        <!-- Pos 6 -->
+        <div class="lb-row" style="opacity:0.88">
+          <div class="lb-pos"><div class="lb-pos-num">6</div></div>
+          <div><div class="lb-player-name">Claudia Angelucci</div><div class="lb-hcp-badge">hcp 19</div></div>
+          <div class="lb-pts">39</div>
+        </div>
+        <!-- Pos 7 -->
+        <div class="lb-row" style="opacity:0.80">
+          <div class="lb-pos"><div class="lb-pos-num">7</div></div>
+          <div><div class="lb-player-name">Rossario Talarico</div><div class="lb-hcp-badge">hcp 23</div></div>
+          <div class="lb-pts">38</div>
+        </div>
+        <!-- Pos 8 -->
+        <div class="lb-row" style="opacity:0.72">
+          <div class="lb-pos"><div class="lb-pos-num">8</div></div>
+          <div><div class="lb-player-name">Patric Hobsbawn</div><div class="lb-hcp-badge">hcp 17</div></div>
+          <div class="lb-pts">38</div>
+        </div>
+        <!-- Pos 9 -->
+        <div class="lb-row" style="opacity:0.65">
+          <div class="lb-pos"><div class="lb-pos-num">9</div></div>
+          <div><div class="lb-player-name">Josh Horne</div><div class="lb-hcp-badge">hcp 18</div></div>
+          <div class="lb-pts">38</div>
+        </div>
+        <!-- Pos 10 -->
+        <div class="lb-row" style="opacity:0.58">
+          <div class="lb-pos"><div class="lb-pos-num">10</div></div>
+          <div><div class="lb-player-name">Ken O'Neill</div><div class="lb-hcp-badge">hcp 5</div></div>
+          <div class="lb-pts">38</div>
+        </div>
+
+        <div class="lb-countback-note">Positions 3, 4 and 5 were tied on 40 points and separated by the back nine: Pribicevic 24, Ewing 22, McPherson 20.</div>
+      </div>
+    </section>
+
+    <!-- FIELD MAP -->
+    <section class="field-map">
+      <div class="eyebrow">📊 Field Map</div>
+      <div class="fm-headline">The Middle of the Field Owned This Saturday.</div>
+      <div class="fm-blurb">Seventy-seven players completed the round and the 30-to-34 band swallowed nearly half of them. Five players reached 40 or above. Four could not get to 25.</div>
+
+      <!-- 40+ band -->
+      <div class="band-row">
+        <div class="band-label">40+ pts</div>
+        <div class="band-track"><div class="band-fill" style="width:6.5%;background:#c9973a;"></div></div>
+        <div class="band-right"><span class="band-count">5</span> <span class="band-desc">&middot; top shelf</span></div>
+      </div>
+      <!-- 35-39 -->
+      <div class="band-row">
+        <div class="band-label">35–39 pts</div>
+        <div class="band-track"><div class="band-fill" style="width:16.9%;background:#174a31;"></div></div>
+        <div class="band-right"><span class="band-count">13</span> <span class="band-desc">&middot; strong finish</span></div>
+      </div>
+      <!-- 30-34 -->
+      <div class="band-row">
+        <div class="band-label">30–34 pts</div>
+        <div class="band-track"><div class="band-fill" style="width:50.6%;background:#1e5c3d;"></div></div>
+        <div class="band-right"><span class="band-count">39</span> <span class="band-desc">&middot; honest work</span></div>
+      </div>
+      <!-- 25-29 -->
+      <div class="band-row">
+        <div class="band-label">25–29 pts</div>
+        <div class="band-track"><div class="band-fill" style="width:20.8%;background:#2d7a55;"></div></div>
+        <div class="band-right"><span class="band-count">16</span> <span class="band-desc">&middot; tough day</span></div>
+      </div>
+      <!-- Under 25 -->
+      <div class="band-row">
+        <div class="band-label">Under 25</div>
+        <div class="band-track"><div class="band-fill" style="width:5.2%;background:#9e9690;"></div></div>
+        <div class="band-right"><span class="band-count">4</span> <span class="band-desc">&middot; one to forget</span></div>
+      </div>
+    </section>
+
+    <!-- CUT LINE -->
+    <section class="cut-card">
+      <div class="cut-eyebrow">✂️ Cut Line</div>
+      <div class="cut-headline">This week the cut fell at <span class="cut-num">32</span> points.</div>
+      <div class="cut-subline">Top half of field plus ties &middot; 13 players survived right on the number</div>
+
+      <!-- GREEN ZONE -->
+      <div class="cut-zone cut-zone-green">
+        <div class="cut-zone-label cut-zone-label-green">Survived on 32 pts</div>
+        <div class="cut-pills">
+          <span class="cut-pill cut-pill-green">B. Colwell</span>
+          <span class="cut-pill cut-pill-green">R. McIntyre</span>
+          <span class="cut-pill cut-pill-green">P. Moreton</span>
+          <span class="cut-pill cut-pill-green">G. Birse</span>
+          <span class="cut-pill cut-pill-green">T. Reynolds</span>
+          <span class="cut-pill cut-pill-green">T. Plunkett</span>
+          <span class="cut-pill cut-pill-green">L. Trevenar</span>
+          <span class="cut-pill cut-pill-green">J. McPherson</span>
+          <span class="cut-pill cut-pill-green">D. Hill</span>
+          <span class="cut-pill cut-pill-green">A. Saunders</span>
+          <span class="cut-pill cut-pill-green">R. Humphreys</span>
+          <span class="cut-pill cut-pill-green">S. McPhail</span>
+          <span class="cut-pill cut-pill-green">T. McIntyre</span>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="cut-divider">
+        <div class="cut-divider-line"></div>
+        <div class="cut-divider-tag">Cut &middot; 32 pts</div>
+        <div class="cut-divider-line"></div>
+      </div>
+
+      <!-- RED ZONE -->
+      <div class="cut-zone cut-zone-red">
+        <div class="cut-zone-label cut-zone-label-red">Missed by one &middot; 31 pts</div>
+        <div class="cut-pills">
+          <span class="cut-pill cut-pill-red">M. Belford</span>
+          <span class="cut-pill cut-pill-red">S. McCooe</span>
+          <span class="cut-pill cut-pill-red">G. Smith</span>
+          <span class="cut-pill cut-pill-red">D. Spillane</span>
+        </div>
+      </div>
+
+      <hr class="mini-tragedy-divider">
+      <div class="mini-tragedy">Stephen McCooe birdied Hole 17 and walked to the 18th needing two points to survive the cut. He made one. Thirty-one.</div>
+    </section>
+
+    <!-- VILLAIN HOLES -->
+    <section class="villain-card">
+      <div class="villain-eyebrow">💀 Villain Hole</div>
+      <div class="villain-headline">Hole 6 Set the Tone. Hole 15 Agreed.</div>
+      <div class="villain-body">Both holes averaged 1.26 stableford points each. They are the same 411-metre stretch of ground, played front and back, and the field had no better answer the second time around. Together they collected 36 wipes. Hole 3 completed the damage in third.</div>
+
+      <!-- Villain #1: H6 full width -->
+      <div>
+        <div class="villain-badge-wrap"><span class="villain-badge">Villain #1</span></div>
+        <div class="villain-hole-card">
+          <div class="vh-header">
+            <div class="vh-hole-name">Hole 6</div>
+            <div class="vh-par-si">Par 4 &middot; SI 1</div>
+          </div>
+          <hr class="vh-divider">
+          <div class="vh-stat-row">
+            <div class="vh-stat-label">Avg stableford pts</div>
+            <div class="vh-stat-value-hero">1.26</div>
+          </div>
+          <div class="vh-stat-row">
+            <div class="vh-stat-label">Wipes</div>
+            <div class="vh-stat-value">20</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Villains #2 & #3 -->
+      <div class="villain-grid">
+        <div>
+          <div class="villain-badge-wrap"><span class="villain-badge">Villain #2</span></div>
+          <div class="villain-hole-card">
+            <div class="vh-header">
+              <div class="vh-hole-name">Hole 15</div>
+              <div class="vh-par-si">Par 4 &middot; SI 2</div>
+            </div>
+            <hr class="vh-divider">
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Avg pts</div>
+              <div class="vh-stat-value-hero">1.26</div>
+            </div>
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Wipes</div>
+              <div class="vh-stat-value">16</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="villain-badge-wrap"><span class="villain-badge">Villain #3</span></div>
+          <div class="villain-hole-card">
+            <div class="vh-header">
+              <div class="vh-hole-name">Hole 3</div>
+              <div class="vh-par-si">Par 3 &middot; SI 3</div>
+            </div>
+            <hr class="vh-divider">
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Avg pts</div>
+              <div class="vh-stat-value-hero">1.44</div>
+            </div>
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Wipes</div>
+              <div class="vh-stat-value">13</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAOS CARD -->
+    <section class="chaos-card">
+      <div class="chaos-watermark">🎢</div>
+      <div class="eyebrow">🎢 Chaos Card</div>
+      <div class="chaos-headline">Nine Points Going Out. Twenty-Two Coming Home.</div>
+      <div class="chaos-body">Matt Belford scored 9 on the front nine. Four holes read zero on his card, including Holes 6 and 8. The course had opinions and it shared them. Then he turned and produced 22 on the back nine, one of the best back nines in the entire field on the day. He needed 32 to survive the cut. He finished on 31. One point short of survival after rescuing a round that looked unsalvageable at the turn.</div>
+      <div class="chaos-stats">
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Front Nine</div>
+          <div class="chaos-stat-value">9</div>
+        </div>
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Back Nine</div>
+          <div class="chaos-stat-value">22</div>
+        </div>
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Final Result</div>
+          <div class="chaos-stat-value">31 pts</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIRDIE COUNTER -->
+    <section class="birdie-card">
+      <div class="birdie-title">Birdie Counter</div>
+      <div class="birdie-count">33</div>
+      <div class="birdie-made">birdies made this Saturday</div>
+      <div class="birdie-season">55 birdies across the season so far</div>
+      <div class="birdie-divider"></div>
+      <div class="birdie-note">Eight players led the field with two birdies each.</div>
+    </section>
+
+    <!-- QUIETLY NOTED -->
+    <section class="qn-card">
+      <div class="qn-eyebrow">👀 Quietly Noted</div>
+      <div class="qn-subhead">Stats that stood out. Things that went unannounced.</div>
+
+      <div class="qn-item">
+        <div class="qn-stat">7</div>
+        <div class="qn-text">Rossario Talarico came as a guest and finished seventh. Thirty-eight points in a field of 77, outscoring 70 Balgowlah members on their own course. Visitors are supposed to make up the numbers. He did not get that memo.</div>
+      </div>
+
+      <div class="qn-item">
+        <div class="qn-stat">22</div>
+        <div class="qn-text">James Swan went 22 points on the front nine, the best first half in the entire field. He then went 13 on the back. Finished eighteenth. The golf course gives and then, mostly, it takes back.</div>
+      </div>
+
+      <div class="qn-item">
+        <div class="qn-stat">20</div>
+        <div class="qn-text">Bronson McPherson split exactly 20 points on the front and 20 on the back. Finished fifth. On a Saturday when everyone else was either charging or falling apart, he just drove in a straight line both ways.</div>
+      </div>
+    </section>
+
+    <!-- FORM WATCH -->
+    <section class="form-card">
+      <div class="eyebrow">📈 Form Watch</div>
+      <div class="form-headline">Angelucci Backs It Up. Ryan Regroups.</div>
+      <div class="form-body">Claudia Angelucci finished T3rd on 37 points in Episode 1, then backed it up with sixth place this week on 39. Two rounds, two top tens, and she is moving in the right direction. Worth keeping an eye on as the season finds its shape.</div>
+      <hr class="form-divider">
+      <div class="form-body">Gary Ryan won Episode 1 outright, the season's first winner at 38 points in a countback. This week he returned 33 and finished twenty-seventh. One week. Noted but not read into.</div>
+    </section>
+
+    <!-- SHARPSHOOTER -->
+    <section class="sharp-card">
+      <div class="eyebrow">🎯 Sharpshooter</div>
+      <div class="sharp-headline">O'Neill. Handicap 5. Thirty-Eight Points.</div>
+      <div class="sharp-body">Ken O'Neill plays off a daily handicap of 5 and posted 38 points to finish tenth, going 20 on the front and 18 on the back, six above the field average of 32. For a near-scratch player to finish that far clear of the pack in a 77-person field, on a day when the course's hardest two holes averaged 1.26 stableford points each, is worth more than a passing nod.</div>
+    </section>
+
+    <!-- FINAL WORD -->
+    <section class="final-card">
+      <div class="final-eyebrow">✍️ Final Word</div>
+      <div class="final-quote">Williams on top with 42, one clear of Andrade. Three more locked at 40, the back nine settling it. Angelucci making it two from two. The season is two rounds old and already it has opinions.</div>
+      <div class="final-next">Episode 3 next Saturday. The course has more to say.</div>
+      <div class="final-footer">Scorecard Stories &middot; Balgowlah Golf Club | Episode 2 | Unsubscribe</div>
+    </section>
+
+  </div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>
