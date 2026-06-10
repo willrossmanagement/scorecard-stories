@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balgowlah GC — Scorecard Stories</title>
+  <meta name="description" content="Weekly competition golf coverage for Balgowlah Golf Club. Every Saturday, the data becomes a story worth reading." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #0e3322;
+      --gold:       #f2c85b;
+      --gold-warm:  #b07d2a;
+      --cream:      #faf6ee;
+      --sand:       #f5f0e8;
+      --stone:      #1a1612;
+      --muted:      #7a6f65;
+      --body-text:  #4a4038;
+      --border:     #e4dbd0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #ffffff;
+      color: var(--stone);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--green);
+      height: 56px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover { color: #fff; }
+
+    .nav-link.active { color: rgba(255,255,255,0.95); }
+
+    .nav-btn {
+      background: var(--gold);
+      color: var(--green);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-btn:hover { opacity: 0.88; }
+
+    /* CLUB HERO */
+    .club-hero {
+      background: var(--green);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+
+    .club-hero-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(242,200,91,0.55);
+      margin-bottom: 14px;
+    }
+
+    .club-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 0.97;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .club-hero-title em { color: var(--gold); font-style: italic; }
+
+    .club-hero-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      max-width: 360px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* SEASON STATS */
+    .season-stats {
+      background: var(--stone);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .season-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.32);
+      white-space: nowrap;
+      padding-right: 14px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .season-pills {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .season-pill {
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .season-n {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .season-l {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.32);
+      margin-top: 4px;
+    }
+
+    /* EPISODES */
+    .episodes {
+      background: var(--sand);
+      padding: 40px 24px 44px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .featured-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      max-width: 720px;
+      margin: 0 auto 14px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .featured-card:hover {
+      border-color: var(--gold-warm);
+      box-shadow: 0 4px 20px rgba(14,51,34,0.08);
+    }
+
+    .featured-content { flex: 1; min-width: 0; }
+
+    .ep-badge {
+      background: var(--green);
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .featured-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    .featured-blurb {
+      font-size: 13px;
+      color: var(--body-text);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .chip-row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .chip {
+      font-size: 10px;
+      color: var(--muted);
+      background: var(--cream);
+      border: 1px solid #e8d8b0;
+      border-radius: 999px;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+
+    .chip b { color: var(--green); font-weight: 700; }
+
+    .featured-stat {
+      background: var(--green);
+      border-radius: 14px;
+      padding: 20px 18px;
+      text-align: center;
+      min-width: 88px;
+      flex-shrink: 0;
+    }
+
+    .featured-stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .featured-stat-l {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.42);
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+
+    .past-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .past-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .past-card:hover {
+      border-color: var(--gold-warm);
+      box-shadow: 0 2px 12px rgba(14,51,34,0.07);
+    }
+
+    .past-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.25;
+      margin: 10px 0 8px;
+    }
+
+    .past-meta { font-size: 11px; color: var(--muted); }
+
+    /* SEASON STORYLINES */
+    .storylines {
+      background: #ffffff;
+      padding: 52px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .storylines-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .storylines-header {
+      margin-bottom: 28px;
+    }
+
+    .storylines-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.1;
+      margin-top: 8px;
+    }
+
+    .storylines-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .storyline-card {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .storyline-icon {
+      font-size: 20px;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .storyline-name {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .storyline-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .storyline-body {
+      font-size: 12px;
+      color: var(--body-text);
+      line-height: 1.6;
+    }
+
+    .storyline-streak {
+      display: flex;
+      gap: 5px;
+      margin-top: 12px;
+    }
+
+    .streak-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0;
+    }
+
+    .streak-dot.miss {
+      background: var(--border);
+      color: var(--muted);
+    }
+
+    /* BIRDIE BAR */
+    .birdie-bars {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .birdie-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .birdie-label {
+      font-size: 10px;
+      color: var(--muted);
+      width: 42px;
+      flex-shrink: 0;
+    }
+
+    .birdie-track {
+      flex: 1;
+      height: 10px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .birdie-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 999px;
+    }
+
+    .birdie-count {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      width: 24px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* SUBSCRIBE */
+    .subscribe-section {
+      background: var(--sand);
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .subscribe-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .subscribe-sub {
+      font-size: 14px;
+      color: var(--body-text);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      max-width: 420px;
+      margin: 0 auto 10px;
+    }
+
+    .subscribe-input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--stone);
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .subscribe-input:focus { border-color: var(--gold-warm); }
+    .subscribe-input::placeholder { color: #b0a89e; }
+
+    .subscribe-btn {
+      background: var(--green);
+      color: var(--gold);
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+
+    .subscribe-btn:hover { opacity: 0.88; }
+
+    .subscribe-note { font-size: 11px; color: var(--muted); }
+
+    /* FOOTER */
+    footer {
+      background: var(--stone);
+      padding: 36px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .footer-link {
+      font-size: 11px;
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-link:hover { color: rgba(255,255,255,0.75); }
+
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 0 16px; }
+      .nav-link { display: none; }
+      .club-hero { padding: 40px 20px 32px; }
+      .club-hero-title { font-size: 38px; }
+      .season-stats { padding: 14px 16px; }
+      .season-label { display: none; }
+      .season-n { font-size: 17px; }
+      .episodes { padding: 28px 16px 32px; }
+      .featured-card { flex-direction: column; gap: 16px; padding: 20px; }
+      .featured-stat { display: none; }
+      .featured-title { font-size: 24px; }
+      .past-grid { grid-template-columns: 1fr; }
+      .storylines { padding: 40px 20px; }
+      .storylines-grid { grid-template-columns: 1fr; }
+      .subscribe-section { padding: 44px 20px; }
+      .subscribe-form { flex-direction: column; }
+      .subscribe-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../" class="nav-logo">Scorecard Stories</a>
+    <div class="nav-links">
+      <a href="./" class="nav-link active">Balgowlah</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <a href="#subscribe" class="nav-btn">Subscribe</a>
+    </div>
+  </nav>
+
+  <section class="club-hero">
+    <p class="club-hero-eyebrow">Scorecard Stories · Season 2026</p>
+    <h1 class="club-hero-title">Balgowlah<br><em>Golf Club</em></h1>
+    <p class="club-hero-sub">Every Saturday competition, covered. Three episodes in. The season is just getting started.</p>
+  </section>
+
+  <div class="season-stats">
+    <span class="season-label">Season 2026</span>
+    <div class="season-pills">
+      <div class="season-pill"><div class="season-n">3</div><div class="season-l">Episodes</div></div>
+      <div class="season-pill"><div class="season-n">260</div><div class="season-l">Players</div></div>
+      <div class="season-pill"><div class="season-n">96</div><div class="season-l">Birdies</div></div>
+      <div class="season-pill"><div class="season-n">1</div><div class="season-l">Hole-in-one</div></div>
+      <div class="season-pill"><div class="season-n">1</div><div class="season-l">Eagle</div></div>
+    </div>
+  </div>
+
+  <section class="episodes">
+    <p class="section-label">All Episodes</p>
+
+    <a href="episodes/episode-03-jun06-2026.html" class="featured-card">
+      <div class="featured-content">
+        <span class="ep-badge">Episode 3 · Jun 6 · Latest</span>
+        <h2 class="featured-title">Three-Way Countback. Hill Birdied When It Mattered.</h2>
+        <p class="featured-blurb">Stroke play. 101 players. Three finish at nett 64 — the whole result comes down to one birdie on the 17th hole.</p>
+        <div class="chip-row">
+          <span class="chip">Stroke</span>
+          <span class="chip"><b>101</b> players</span>
+          <span class="chip">Winner nett <b>64</b></span>
+          <span class="chip">Avg <b>74.1</b></span>
+        </div>
+      </div>
+      <div class="featured-stat">
+        <div class="featured-stat-n">64</div>
+        <div class="featured-stat-l">Winning<br>nett</div>
+      </div>
+    </a>
+
+    <div class="past-grid">
+      <a href="episodes/episode-02-may30-2026.html" class="past-card">
+        <span class="ep-badge">Episode 2 · May 30</span>
+        <p class="past-title">The Rain Came. Williams Didn't Care.</p>
+        <p class="past-meta">Stableford · 77 players · Winner 42 pts · Avg 32.0</p>
+      </a>
+      <a href="episodes/episode-01-may23-2026.html" class="past-card">
+        <span class="ep-badge">Episode 1 · May 23</span>
+        <p class="past-title">Ferguson Holes Out. Ryan Takes The Countback.</p>
+        <p class="past-meta">Stableford · 82 players · Winner 38 pts · Avg 29.9</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="storylines">
+    <div class="storylines-inner">
+      <div class="storylines-header">
+        <p class="section-label" style="margin-bottom:6px;">The story so far</p>
+        <h2 class="storylines-title">Season Narratives</h2>
+      </div>
+      <div class="storylines-grid">
+
+        <div class="storyline-card">
+          <div class="storyline-icon">📈</div>
+          <p class="storyline-name">Form Watch</p>
+          <p class="storyline-headline">Gary Ryan. Three rounds. Three cuts made.</p>
+          <p class="storyline-body">Won Episode 1 on countback. Finished 27th in Episode 2. 20th in the stroke round. He just keeps showing up.</p>
+          <div class="storyline-streak">
+            <div class="streak-dot">E1</div>
+            <div class="streak-dot">E2</div>
+            <div class="streak-dot">E3</div>
+          </div>
+        </div>
+
+        <div class="storyline-card">
+          <div class="storyline-icon">👀</div>
+          <p class="storyline-name">Arc to Watch</p>
+          <p class="storyline-headline">Claudia Angelucci. Stableford star, stroke question mark.</p>
+          <p class="storyline-body">T3rd in Episode 1. 6th in Episode 2. Then the stroke round arrived — 73rd. A format story to follow all season.</p>
+          <div class="storyline-streak">
+            <div class="streak-dot">E1</div>
+            <div class="streak-dot">E2</div>
+            <div class="streak-dot miss">E3</div>
+          </div>
+        </div>
+
+        <div class="storyline-card">
+          <div class="storyline-icon">🐦</div>
+          <p class="storyline-name">Birdie Trend</p>
+          <p class="storyline-headline">The field is warming up. 41 birdies last Saturday.</p>
+          <p class="storyline-body">Week by week the field is finding form. From 22 birdies in Episode 1 to 41 in Episode 3. Season total: 96.</p>
+          <div class="birdie-bars">
+            <div class="birdie-row">
+              <span class="birdie-label">Ep 1</span>
+              <div class="birdie-track"><div class="birdie-fill" style="width:54%;"></div></div>
+              <span class="birdie-count">22</span>
+            </div>
+            <div class="birdie-row">
+              <span class="birdie-label">Ep 2</span>
+              <div class="birdie-track"><div class="birdie-fill" style="width:80%;"></div></div>
+              <span class="birdie-count">33</span>
+            </div>
+            <div class="birdie-row">
+              <span class="birdie-label">Ep 3</span>
+              <div class="birdie-track"><div class="birdie-fill" style="width:100%;"></div></div>
+              <span class="birdie-count">41</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="subscribe-section" id="subscribe">
+    <h2 class="subscribe-title">Never miss an edition.</h2>
+    <p class="subscribe-sub">Get each episode delivered Saturday morning. Free, always.</p>
+    <form class="subscribe-form" action="#" method="post">
+      <input class="subscribe-input" type="email" name="email" placeholder="Your email address" autocomplete="email" />
+      <button class="subscribe-btn" type="submit">Subscribe free</button>
+    </form>
+    <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+  </section>
+
+  <footer>
+    <p class="footer-logo">Scorecard Stories</p>
+    <div class="footer-links">
+      <a href="./" class="footer-link">Balgowlah</a>
+      <a href="../about.html" class="footer-link">About</a>
+      <a href="../contact.html" class="footer-link">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Scorecard Stories · scorecardstories.com.au</p>
+  </footer>
+
+</body>
+</html>

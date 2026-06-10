@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Scorecard Stories</title>
+  <meta name="description" content="Why Scorecard Stories exists. The gap in club golf nobody was filling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #0e3322;
+      --gold:       #f2c85b;
+      --gold-warm:  #b07d2a;
+      --cream:      #faf6ee;
+      --sand:       #f5f0e8;
+      --stone:      #1a1612;
+      --muted:      #7a6f65;
+      --body-text:  #4a4038;
+      --border:     #e4dbd0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #ffffff;
+      color: var(--stone);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      background: var(--green);
+      height: 56px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover { color: #fff; }
+    .nav-link.active { color: rgba(255,255,255,0.95); }
+
+    .nav-btn {
+      background: var(--gold);
+      color: var(--green);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-btn:hover { opacity: 0.88; }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: #ffffff;
+      padding: 72px 24px 56px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-warm);
+      margin-bottom: 18px;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 0.97;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .page-title em { font-style: italic; color: var(--gold-warm); }
+
+    .page-intro {
+      font-size: 16px;
+      color: var(--body-text);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .content-block {
+      margin-bottom: 48px;
+    }
+
+    .content-block:last-child { margin-bottom: 0; }
+
+    .content-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-warm);
+      margin-bottom: 12px;
+    }
+
+    .content-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .content-body {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.75;
+    }
+
+    .content-body p + p { margin-top: 14px; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      background: var(--sand);
+      border-left: 3px solid var(--gold-warm);
+      padding: 24px 28px;
+      margin: 40px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--stone);
+      line-height: 1.45;
+    }
+
+    /* CURRENTLY COVERING */
+    .covering {
+      background: var(--sand);
+      padding: 48px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .covering-inner { max-width: 520px; margin: 0 auto; }
+
+    .covering-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--green);
+      margin: 10px 0 12px;
+    }
+
+    .covering-body {
+      font-size: 14px;
+      color: var(--body-text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .club-pill {
+      background: var(--green);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 999px;
+      display: inline-block;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .club-pill:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    footer {
+      background: var(--stone);
+      padding: 36px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .footer-link {
+      font-size: 11px;
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-link:hover { color: rgba(255,255,255,0.75); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 16px; }
+      .nav-link { display: none; }
+      .page-hero { padding: 52px 20px 40px; }
+      .page-title { font-size: 40px; }
+      .content { padding: 44px 20px; }
+      .content-heading { font-size: 26px; }
+      .pull-quote p { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Scorecard Stories</a>
+    <div class="nav-links">
+      <a href="balgowlah/" class="nav-link">Balgowlah</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="/" class="nav-btn">Subscribe</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <p class="eyebrow">The story behind the stories</p>
+    <h1 class="page-title">Why this<br><em>exists</em></h1>
+    <p class="page-intro">Every Saturday across Australia, thousands of club golfers compete. The data is rich, the drama is real, and almost none of it is ever told.</p>
+  </section>
+
+  <div class="content">
+
+    <div class="content-block">
+      <p class="content-eyebrow">The gap</p>
+      <h2 class="content-heading">The data has always been there. The storytelling hasn't.</h2>
+      <div class="content-body">
+        <p>Every Saturday competition produces a leaderboard, a field breakdown, dozens of individual performances, and more than a few moments that deserve to be remembered. A hole-in-one. A three-way countback. A low marker who shot a career round.</p>
+        <p>Most clubs send a results email. A spreadsheet. Maybe a post on the noticeboard. And then it's gone — a week's worth of real sport, reduced to a number and forgotten by Sunday afternoon.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Every Saturday, 80+ golfers compete. Almost no club does anything interesting with that data. We do."</p>
+    </div>
+
+    <div class="content-block">
+      <p class="content-eyebrow">What we do</p>
+      <h2 class="content-heading">Competition data, turned into something worth reading.</h2>
+      <div class="content-body">
+        <p>Scorecard Stories is a weekly newsletter that takes the raw competition data — every score, every countback, every birdie — and turns it into editorial worth reading. Not a results dump. An actual story.</p>
+        <p>We cover the winner in full. We track the villain holes. We notice the player who quietly went two better than their handicap for the third week running. We give club golf the coverage it deserves.</p>
+        <p>The tone is sharp, dry, and Australian. Think the bar after the round, if the bloke next to you had read every score and still had opinions about all of them.</p>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <p class="content-eyebrow">The vision</p>
+      <h2 class="content-heading">Starting at Balgowlah. Built to grow.</h2>
+      <div class="content-body">
+        <p>We launched in May 2026 with Balgowlah Golf Club on Sydney's Northern Beaches. Every Saturday competition covered, every episode published free.</p>
+        <p>The goal is to bring this to golf clubs across Sydney and beyond — one club at a time, done properly. Not a template churned out at scale. An actual publication, for actual members, who care about their actual club.</p>
+        <p>If you want to bring Scorecard Stories to your club, we'd love to hear from you.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="covering">
+    <div class="covering-inner">
+      <p class="eyebrow">Currently covering</p>
+      <h2 class="covering-heading">Balgowlah Golf Club</h2>
+      <p class="covering-body">Sydney's Northern Beaches. Three episodes in. Season 2026 underway. Every Saturday, something worth reading.</p>
+      <a href="balgowlah/" class="club-pill">Read the season →</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-logo">Scorecard Stories</p>
+    <div class="footer-links">
+      <a href="balgowlah/" class="footer-link">Balgowlah</a>
+      <a href="about.html" class="footer-link">About</a>
+      <a href="contact.html" class="footer-link">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Scorecard Stories · scorecardstories.com.au</p>
+  </footer>
+
+</body>
+</html>
