@@ -379,15 +379,15 @@
   <section class="page-hero">
     <p class="eyebrow">Get in touch</p>
     <h1 class="page-title">Say<br><em>hello</em></h1>
-    <p class="page-intro">Questions, feedback, or want to bring Scorecard Stories to your golf club? We're all ears.</p>
+    <p class="page-intro">Reader mail on the left. Club business on the right. Both land in the same inbox, usually answered the same day.</p>
   </section>
 
   <div class="contact-grid">
 
     <div class="form-section">
       <h2 class="form-heading">Send us a message</h2>
-      <p class="form-sub">Reader questions, feedback, corrections — anything at all.</p>
-      <form action="mailto:balgowlah@scorecardstories.com.au" method="post" enctype="text/plain">
+      <p class="form-sub">Questions, feedback, corrections. If we got a number wrong, we genuinely want to know.</p>
+      <form onsubmit="event.preventDefault(); var f=this; window.location.href='mailto:hello@scorecardstories.com.au?subject='+encodeURIComponent('Reader message from '+f.name.value)+'&body='+encodeURIComponent(f.message.value+'\n\n— '+f.name.value+' ('+f.email.value+')');">
         <div class="form-group">
           <label class="form-label" for="name">Your name</label>
           <input class="form-input" type="text" id="name" name="name" placeholder="First and last name" />
@@ -401,6 +401,7 @@
           <textarea class="form-textarea" id="message" name="message" placeholder="What's on your mind?"></textarea>
         </div>
         <button class="form-submit" type="submit">Send message</button>
+        <p style="font-size:11px;color:var(--muted);margin-top:12px;">Opens your email app. Or write to us directly: <a href="mailto:hello@scorecardstories.com.au" style="color:var(--gold-warm);font-weight:700;text-decoration:none;">hello@scorecardstories.com.au</a></p>
       </form>
     </div>
 
@@ -409,7 +410,7 @@
       <p class="club-sub">Interested in bringing Scorecard Stories to your members?</p>
       <div class="club-pitch">
         <p>We're building a network of clubs covered properly — real editorial, real stories, free for members to read.</p>
-        <p>If you're a club administrator, captain, or member who wants to make this happen, tell us about your club and we'll be in touch.</p>
+        <p>There's nothing to install and nothing to pay. All it takes is the two files your comp software already produces every Saturday. If you're a club administrator, captain, or member who wants this for your club, tell us about it and we'll be in touch.</p>
       </div>
       <div class="what-you-get">
         <div class="what-item">
@@ -429,7 +430,7 @@
           <span class="what-text">Season tracking, storylines, and statistics</span>
         </div>
       </div>
-      <form action="mailto:balgowlah@scorecardstories.com.au" method="post" enctype="text/plain">
+      <form onsubmit="event.preventDefault(); var f=this; window.location.href='mailto:hello@scorecardstories.com.au?subject='+encodeURIComponent('Club enquiry: '+f.club.value)+'&body='+encodeURIComponent(f.message.value+'\n\nClub: '+f.club.value+'\nContact: '+f.email.value);">
         <div class="club-form-group">
           <label class="club-form-label" for="club-name">Club name</label>
           <input class="club-form-input" type="text" id="club-name" name="club" placeholder="e.g. Manly Golf Club" />
@@ -443,6 +444,7 @@
           <textarea class="club-form-textarea" id="club-message" name="message" placeholder="Location, approximate field size, any context..."></textarea>
         </div>
         <button class="club-form-submit" type="submit">Submit club enquiry</button>
+        <p style="font-size:11px;color:var(--muted);margin-top:12px;">Opens your email app. Or write directly: <a href="mailto:hello@scorecardstories.com.au" style="color:var(--gold-warm);font-weight:700;text-decoration:none;">hello@scorecardstories.com.au</a></p>
       </form>
     </div>
 
