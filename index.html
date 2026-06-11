@@ -52,7 +52,7 @@
     .subscribe-input::placeholder { color: #b0a89e; }
     .subscribe-select { padding: 12px 18px; border: 1.5px solid var(--border); border-radius: 999px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--stone); background: var(--cream); outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%23b07d2a' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 36px; }
     .subscribe-select:focus { border-color: var(--gold-warm); }
-    .subscribe-otherclub { display: none; max-width: 420px; margin: 10px auto 0; }
+    .subscribe-otherclub { display: none; margin: 2px auto 0; }
     .subscribe-otherclub.show { display: block; }
     .subscribe-otherclub input { width: 100%; }
     .subscribe-btn { background: var(--green); color: var(--gold); border: none; padding: 12px 22px; border-radius: 999px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; }
@@ -161,17 +161,18 @@
     <p class="eyebrow">Club golf · Finally worth reading about</p>
     <h1 class="hero-title">The stories hidden in<br><em>your Saturday round.</em></h1>
     <p class="hero-sub">Every Saturday, your club comp produces a leaderboard and a hundred quiet dramas. Scorecard Stories turns that data into a weekly read golfers look forward to opening.</p>
-    <form class="subscribe-form" action="#" method="post" style="flex-wrap: wrap;">
-      <input class="subscribe-input" type="email" name="email" placeholder="Your email address" autocomplete="email" />
-      <select class="subscribe-select" name="club" id="club-select" onchange="document.getElementById('other-club').classList.toggle('show', this.value==='other')">
-        <option value="balgowlah" selected>Balgowlah GC</option>
-        <option value="other">My club isn't here yet</option>
+    <form class="subscribe-form" action="https://scorecardstories.us19.list-manage.com/subscribe/post?u=343f4c303aceb6aa029870028&amp;id=9ed5e5d02b&amp;f_id=002a79e7f0" method="post" style="flex-wrap: wrap;">
+      <input class="subscribe-input" type="email" name="EMAIL" placeholder="Your email address" autocomplete="email" required />
+      <select class="subscribe-select" name="group[179979]" id="club-select" onchange="document.getElementById('other-club').classList.toggle('show', this.value==='2')">
+        <option value="1" selected>Balgowlah GC</option>
+        <option value="2">My club isn't here yet</option>
       </select>
       <button class="subscribe-btn" type="submit">Subscribe free</button>
+      <div class="subscribe-otherclub" id="other-club" style="flex-basis:100%;">
+        <input class="subscribe-input" type="text" name="CLUBNAME" placeholder="Which club? We'll let you know when we cover it" />
+      </div>
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_343f4c303aceb6aa029870028_9ed5e5d02b" tabindex="-1" value=""></div>
     </form>
-    <div class="subscribe-otherclub" id="other-club">
-      <input class="subscribe-input" type="text" name="club_name" placeholder="Which club? We'll let you know when we cover it" />
-    </div>
     <p class="hero-note" style="margin-top:12px;">Free. In your inbox every Monday morning. No spam, ever.</p>
   </section>
 
