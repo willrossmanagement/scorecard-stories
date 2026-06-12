@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 126">
+  <!-- Scorecard Stories: the talking green (concept 40, line art master) -->
+  <path d="M14,56 C14,28 40,8 72,8 C104,8 130,28 130,56 C130,84 104,104 72,104 C64,104 56,103 49,100 L20,118 L31,92 C20,83 14,70 14,56 Z" fill="none" stroke="#f2c85b" stroke-width="5" stroke-linejoin="round"/>
+  <line x1="72" y1="62" x2="72" y2="26" stroke="#f2c85b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M72,26 L96,33.5 L72,41 Z" fill="#f2c85b"/>
+</svg>

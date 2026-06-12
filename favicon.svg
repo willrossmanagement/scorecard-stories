@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 126">
+  <!-- Scorecard Stories: the talking green (concept 40, favicon adaptation: solid bubble) -->
+  <path d="M14,56 C14,28 40,8 72,8 C104,8 130,28 130,56 C130,84 104,104 72,104 C64,104 56,103 49,100 L20,118 L31,92 C20,83 14,70 14,56 Z" fill="#1e5c3d"/>
+  <line x1="70" y1="68" x2="70" y2="24" stroke="#faf6ee" stroke-width="9" stroke-linecap="round"/>
+  <path d="M72,20 L106,32 L72,46 Z" fill="#f2c85b"/>
+</svg>
