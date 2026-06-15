@@ -301,7 +301,8 @@
       padding: 18px 20px;
       text-decoration: none;
       color: inherit;
-      display: block;
+      display: flex;
+      flex-direction: column;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
 
@@ -320,6 +321,9 @@
     }
 
     .past-meta { font-size: 11px; color: var(--muted); }
+    .read-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); color: var(--gold-warm); font-size: 12.5px; font-weight: 700; }
+    .past-card .read-bottom { margin-top: auto; }
+    .featured-card:hover .read-bottom, .past-card:hover .read-bottom { color: var(--green); }
 
     /* SEASON STORYLINES */
     .storylines {
@@ -722,6 +726,7 @@
           <span class="chip">Winner <b>37</b> pts</span>
           <span class="chip">Avg <b>27.0</b></span>
         </div>
+        <div class="read-bottom"><span>Read the full episode</span><span>&rarr;</span></div>
       </div>
       <div class="featured-stat">
         <div class="featured-stat-n">37</div>
@@ -734,11 +739,13 @@
         <span class="ep-badge">Episode 3 · Jun 6</span>
         <p class="past-title">Hill Birdied the 17th. In a Three-Way Countback, That Was Enough.</p>
         <p class="past-meta">Stroke · 101 players · Winner nett 64 · Avg 74.1</p>
+        <div class="read-bottom"><span>Read the full episode</span><span>&rarr;</span></div>
       </a>
       <a href="episodes/episode-02-may30-2026.html" class="past-card">
         <span class="ep-badge">Episode 2 · May 30</span>
         <p class="past-title">Hole 6 Said No. Williams Had Other Ideas.</p>
         <p class="past-meta">Stableford · 77 players · Winner 42 pts · Avg 32.0</p>
+        <div class="read-bottom"><span>Read the full episode</span><span>&rarr;</span></div>
       </a>
     </div>
 
