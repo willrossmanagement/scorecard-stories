@@ -414,6 +414,60 @@
       color: var(--muted);
     }
 
+    /* STREAK BOARD */
+    .streak-board {
+      background: var(--green);
+      border-radius: 22px;
+      padding: 28px 24px;
+      margin-bottom: 22px;
+    }
+    .sb-eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px;
+    }
+    .sb-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700;
+      color: var(--cream); line-height: 1.1; margin-bottom: 4px;
+    }
+    .sb-title em { font-style: italic; color: var(--gold); }
+    .sb-sub {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.5; margin-bottom: 20px;
+    }
+    .sb-grid {
+      display: grid; grid-template-columns: 1fr auto;
+      row-gap: 11px; column-gap: 16px; align-items: center;
+    }
+    .sb-head {
+      font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); font-weight: 700;
+    }
+    .sb-cellhead { display: flex; gap: 7px; }
+    .sb-cellhead span {
+      width: 14px; text-align: center; font-size: 8px;
+      color: rgba(255,255,255,0.4); font-weight: 700;
+    }
+    .sb-name {
+      font-size: 14px; font-weight: 700; color: #fff;
+      display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap;
+    }
+    .sb-name.sb-lead { color: var(--gold); }
+    .sb-streak-num { color: var(--gold); font-size: 12px; font-weight: 900; }
+    .sb-lead .sb-streak-num { color: var(--cream); }
+    .sb-tag { font-size: 9.5px; color: var(--gold); font-weight: 700; letter-spacing: 0.03em; }
+    .sb-cells { display: flex; gap: 7px; }
+    .sq { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+    .sq.made { background: var(--gold); }
+    .sq.off  { background: transparent; border: 1.5px solid rgba(255,255,255,0.32); }
+    .sq.over { background: rgba(255,255,255,0.12); }
+    .sb-legend {
+      display: flex; flex-wrap: wrap; gap: 14px; font-size: 10px;
+      color: rgba(255,255,255,0.5); margin-top: 18px; padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .sb-legend span { display: flex; align-items: center; gap: 5px; }
+
     /* BIRDIE BAR */
     .birdie-bars {
       margin-top: 10px;
@@ -661,6 +715,47 @@
         <p class="section-label" style="margin-bottom:6px;">The story so far</p>
         <h2 class="storylines-title">Season Narratives</h2>
       </div>
+      <section class="streak-board">
+        <div class="sb-eyebrow"><svg viewBox="0 0 24 24" width="15" height="15" style="color:var(--gold);flex:0 0 auto" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,17.5 9.5,11.5 13,14 19.5,6.8"/><polyline points="15.6,6.2 19.9,6.4 19.7,10.7"/></g></svg> The Streak Board</div>
+        <div class="sb-title">Four episodes in. <em>Some haven&#39;t blinked.</em></div>
+        <div class="sb-sub">Two players sit clear at the top of the active cut streaks, four from four. Eleven more are still alive on three in a row.</div>
+        <div class="sb-grid">
+        <div class="sb-head">Player &middot; streak</div>
+        <div class="sb-cellhead"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+        <div class="sb-name sb-lead">Jasper Rowden <span class="sb-streak-num">4</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span></div>
+        <div class="sb-name sb-lead">Stu McPhail <span class="sb-streak-num">4</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span></div>
+        <div class="sb-name">David Hill <span class="sb-streak-num">3</span> <span class="sb-tag">&middot; Won Ep 3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span></div>
+        <div class="sb-name">Gary Ryan <span class="sb-streak-num">3</span> <span class="sb-tag">&middot; Won Ep 1</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span></div>
+        <div class="sb-name">Bob McLean <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq off"></span><span class="sq made"></span><span class="sq made"></span></div>
+        <div class="sb-name">Ian James <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span></div>
+        <div class="sb-name">Josh Chambers <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span><span class="sq made"></span></div>
+        <div class="sb-name">Ken O&#39;Neill <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span></div>
+        <div class="sb-name">Matt Andrade <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span></div>
+        <div class="sb-name">Mikael Pribicevic <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span></div>
+        <div class="sb-name">Tim Mara <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span><span class="sq off"></span></div>
+        <div class="sb-name">Tim Plunkett <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq off"></span><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span></div>
+        <div class="sb-name">Zac O&#39;Hehir <span class="sb-streak-num">3</span></div>
+        <div class="sb-cells"><span class="sq off"></span><span class="sq made"></span><span class="sq made"></span><span class="sq made"></span></div>
+        </div>
+        <div class="sb-legend">
+          <span><span class="sq made"></span> cut made</span>
+          <span><span class="sq off"></span> week off (streak rests)</span>
+          <span><span class="sq over"></span> streak over</span>
+        </div>
+      </section>
+
       <div class="storylines-grid">
 
         <div class="storyline-card">
