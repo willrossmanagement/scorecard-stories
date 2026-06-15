@@ -414,6 +414,25 @@
       color: var(--muted);
     }
 
+    .win-roll {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .win-pill {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--green);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 4px 9px;
+    }
+
+    .win-pill b { color: var(--gold-warm); }
+
     /* STREAK BOARD */
     .streak-board {
       background: var(--green);
@@ -716,7 +735,7 @@
         <h2 class="storylines-title">Season Narratives</h2>
       </div>
       <section class="streak-board">
-        <div class="sb-eyebrow"><svg viewBox="0 0 24 24" width="15" height="15" style="color:var(--gold);flex:0 0 auto" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,17.5 9.5,11.5 13,14 19.5,6.8"/><polyline points="15.6,6.2 19.9,6.4 19.7,10.7"/></g></svg> The Streak Board</div>
+        <div class="sb-eyebrow"><svg viewBox="0 0 24 24" width="15" height="15" style="color:var(--gold);flex:0 0 auto" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,17.5 9.5,11.5 13,14 19.5,6.8"/><polyline points="15.6,6.2 19.9,6.4 19.7,10.7"/></g></svg> The Cut Streak Board</div>
         <div class="sb-title">Four episodes in. <em>Some haven&#39;t blinked.</em></div>
         <div class="sb-sub">Two players sit clear at the top of the active cut streaks, four from four. Eleven more are still alive on three in a row.</div>
         <div class="sb-grid">
@@ -759,20 +778,20 @@
       <div class="storylines-grid">
 
         <div class="storyline-card">
-          <div class="storyline-icon">📈</div>
-          <p class="storyline-name">Form Watch</p>
-          <p class="storyline-headline">Jasper Rowden. Four rounds. Four cuts made.</p>
-          <p class="storyline-body">Finished 3rd in Episode 4 on a gross 71, front nine 18, back nine 18. Made the cut in every episode this season. Steady is too dull a word for it.</p>
-          <div class="storyline-streak">
-            <div class="streak-dot">E1</div>
-            <div class="streak-dot">E2</div>
-            <div class="streak-dot">E3</div>
-            <div class="streak-dot">E4</div>
+          <div class="storyline-icon"><svg viewBox="0 0 24 24" width="22" height="22" style="color:#b07d2a;display:block" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"><path d="M8,4.5 h8 v4.5 a4,4 0 0 1 -8,0 Z"/><path d="M8,5.5 H5.2 a2.8,2.8 0 0 0 3,3.6"/><path d="M16,5.5 h2.8 a2.8,2.8 0 0 1 -3,3.6"/><line x1="12" y1="13.3" x2="12" y2="17"/><line x1="8.8" y1="18.8" x2="15.2" y2="18.8"/></g></svg></div>
+          <p class="storyline-name">Title Race</p>
+          <p class="storyline-headline">Four episodes. Four different winners.</p>
+          <p class="storyline-body">Gary Ryan, Richard Williams, David Hill, then John Tregunna. Nobody has won twice this season, and nobody has gone back to back. The trophy has changed hands every week.</p>
+          <div class="win-roll">
+            <span class="win-pill"><b>E1</b> Ryan</span>
+            <span class="win-pill"><b>E2</b> Williams</span>
+            <span class="win-pill"><b>E3</b> Hill</span>
+            <span class="win-pill"><b>E4</b> Tregunna</span>
           </div>
         </div>
 
         <div class="storyline-card">
-          <div class="storyline-icon">👀</div>
+          <div class="storyline-icon"><svg viewBox="0 0 24 24" width="22" height="22" style="color:#b07d2a;display:block" aria-hidden="true"><path d="M3,12 C7,6.5 17,6.5 21,12 C17,17.5 7,17.5 3,12 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></div>
           <p class="storyline-name">Arc to Watch</p>
           <p class="storyline-headline">Claudia Angelucci. Stableford star, stroke question mark.</p>
           <p class="storyline-body">T3rd in Episode 1. 6th in Episode 2. Then the stroke round arrived. 73rd. A format story to follow all season.</p>
@@ -785,7 +804,7 @@
         </div>
 
         <div class="storyline-card">
-          <div class="storyline-icon">🐦</div>
+          <div class="storyline-icon"><svg viewBox="0 0 32 28" width="24" height="21" style="color:#b07d2a;display:block" aria-hidden="true"><circle cx="16" cy="14" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="16" y="18.6" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-style="italic" font-size="13" fill="currentColor" transform="rotate(-9 16 14)">3</text></svg></div>
           <p class="storyline-name">Birdie Trend</p>
           <p class="storyline-headline">A lighter week. 115 birdies across the season.</p>
           <p class="storyline-body">Episode 4 brought a smaller field and a harder day — 19 birdies, the lowest of the season. Season total: 115.</p>
