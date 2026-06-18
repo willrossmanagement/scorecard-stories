@@ -47,7 +47,10 @@
     .nav-btn:hover { opacity: 0.88; }
 
     /* HERO */
-    .hero { background: #ffffff; padding: 76px 24px 60px; text-align: center; }
+    .hero { position: relative; padding: 84px 24px 72px; text-align: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; display: block; }
+    .hero-card { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; background: rgba(250,246,238,0.86); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border-radius: 28px; padding: 44px 40px; box-shadow: 0 18px 50px rgba(14,51,34,0.18); }
     .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-warm); margin-bottom: 20px; }
     .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 66px; font-weight: 700; color: var(--green); line-height: 0.97; letter-spacing: -1.5px; margin-bottom: 22px; }
     .hero-title em { font-style: italic; color: var(--gold-warm); }
@@ -137,7 +140,8 @@
     @media (max-width: 720px) {
       nav { padding: 0 16px; }
       .nav-link { display: none; }
-      .hero { padding: 52px 20px 44px; }
+      .hero { padding: 36px 16px 48px; }
+      .hero-card { padding: 28px 22px; }
       .hero-title { font-size: 42px; letter-spacing: -0.5px; }
       .subscribe-form { flex-direction: column; }
       .subscribe-btn, .subscribe-select { width: 100%; }
@@ -170,6 +174,8 @@
 
   <!-- 1. HERO: brand-level value proposition -->
   <section class="hero" id="subscribe">
+    <div class="hero-bg"><img src="assets/hero-golf.jpg" alt="" /></div>
+    <div class="hero-card">
     <p class="eyebrow">Club golf · Finally worth reading about</p>
     <h1 class="hero-title">The stories hidden in<br><em>your Saturday round.</em></h1>
     <p class="hero-sub">Every week, your club comp produces a leaderboard and a hundred quiet dramas. Scorecard Stories turns that data into a weekly read golfers look forward to opening.</p>
@@ -186,6 +192,7 @@
       <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_343f4c303aceb6aa029870028_9ed5e5d02b" tabindex="-1" value=""></div>
     </form>
     <p class="hero-note" style="margin-top:12px;">Free. In your inbox every Monday morning. No spam, ever.</p>
+    </div>
   </section>
 
   <!-- 2. HOW IT WORKS: the infographic strip -->
