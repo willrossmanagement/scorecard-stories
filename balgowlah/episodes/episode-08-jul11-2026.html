@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scorecard Stories @ Balgowlah GC | 11 July 2026</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:image" content="https://scorecardstories.com.au/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #faf6ee;
+  --sand: #e8e0d2;
+  --green-dark: #0e3322;
+  --green-deeper: #071a12;
+  --green-mid: #174a31;
+  --green-light: #1e5c3d;
+  --gold: #f2c85b;
+  --gold-light: #f2d07a;
+  --gold-pale: #fdf3d8;
+  --stone: #1a1612;
+  --muted: #7a6f65;
+  --red-dark: #6b1818;
+  --sky: #e8f4fd;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--sand);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  width: min(700px, 100%);
+  margin: 28px auto;
+  background: var(--cream);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,.22);
+}
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* MASTHEAD */
+.masthead { background: var(--cream); padding: 36px 28px 24px; text-align: center; }
+.masthead-rule { width: 48px; height: 2px; background: var(--green-dark); margin: 0 auto 16px; }
+.masthead-title { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: var(--green-dark); line-height: 1; letter-spacing: -.5px; }
+.masthead-title em { font-style: italic; color: #b07d2a; }
+.masthead-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--muted); margin: 8px 0 20px; }
+.club-row { display: flex; align-items: center; gap: 14px; justify-content: center; margin-bottom: 16px; }
+.club-rule { flex: 1; height: 1px; background: #b07d2a; opacity: .45; max-width: 80px; }
+.club-name { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green-dark); }
+.badge-row { display: flex; gap: 8px; justify-content: center; }
+.badge { background: var(--green-dark); color: rgba(255,255,255,.85); font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; }
+.badge-format { background: #b07d2a; color: #fdf3d8; }
+
+/* STATS BAR */
+.stats-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.stat-pill { background: var(--green-dark); border-radius: 20px; padding: 16px 12px; text-align: center; }
+.stat-number { font-family: 'DM Sans', sans-serif; font-size: 24px; font-weight: 900; color: var(--gold); line-height: 1; }
+.stat-label { font-family: 'DM Sans', sans-serif; font-size: 9px; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.58); margin-top: 4px; }
+
+/* BASE CARD */
+.card { background: var(--white); border: 1px solid #e4dbd0; border-radius: 28px; padding: 22px; box-shadow: 0 2px 14px rgba(0,0,0,.04); }
+.eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: var(--muted); margin-bottom: 10px; }
+
+/* HEADLINE EVENT */
+.headline-event-card { background: radial-gradient(circle at 50% 0%, rgba(242,200,91,.22), transparent 60%), linear-gradient(175deg, #174a31, #0e3322); border: 1px solid rgba(201,151,58,.45); border-radius: 28px; padding: 28px 24px; text-align: center; }
+.he-emoji { font-size: 34px; margin-bottom: 8px; }
+.he-headline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 40px; font-weight: 700; color: var(--gold-light); line-height: 1.05; margin-bottom: 14px; }
+.he-body { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.85); text-align: left; }
+.he-body p + p { margin-top: 12px; }
+
+/* WEATHER */
+.weather-banner { background: var(--sky); border-radius: 16px; padding: 12px 18px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: #3a4a58; text-align: center; line-height: 1.5; }
+
+/* WINNER CARD */
+.winner-card { background: var(--gold-pale); border: 1px solid #e8c876; border-radius: 28px; padding: 28px 24px 24px; }
+.winner-name { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: var(--muted); margin-bottom: 6px; }
+.winner-headline { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 700; color: var(--green-dark); line-height: 1.0; margin-bottom: 16px; }
+.winner-body { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.7; color: #4a4038; margin-bottom: 24px; }
+.winner-body p + p { margin-top: 12px; }
+
+/* LEADERBOARD */
+.leaderboard { background: linear-gradient(175deg, #174a31, #0e3322); border-radius: 20px; border: 1px solid rgba(201,151,58,.45); overflow: hidden; }
+.lb-header { background: #1a4731; padding: 14px 16px 10px; display: flex; align-items: flex-start; justify-content: space-between; }
+.lb-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: var(--gold-light); line-height: 1; }
+.lb-subtitle { font-family: 'DM Sans', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.55); margin-top: 3px; }
+.lb-badge { background: rgba(242,208,122,.15); border: 1px solid rgba(242,208,122,.4); color: var(--gold-light); font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 10px; border-radius: 20px; align-self: center; white-space: nowrap; flex-shrink: 0; }
+.lb-col-headers { background: rgba(0,0,0,.15); display: grid; grid-template-columns: 56px 1fr 56px; padding: 6px 16px; }
+.lb-col-headers span { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.48); }
+.lb-col-headers span:first-child { text-align: center; }
+.lb-col-headers span:last-child { text-align: right; }
+.lb-row { display: grid; grid-template-columns: 56px 1fr 56px; padding: 10px 16px; align-items: center; }
+.lb-pos { text-align: center; }
+.lb-pos-circle { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 900; color: var(--green-dark); }
+.lb-pos-num { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: rgba(255,255,255,.55); }
+.lb-player-name { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
+.lb-hcp-badge { font-family: 'DM Sans', sans-serif; font-size: 10px; color: rgba(255,255,255,.55); margin-top: 2px; }
+.lb-pts { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 900; color: var(--gold-light); text-align: right; }
+.lb-countback-note { padding: 10px 16px 14px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: rgba(255,255,255,.65); border-top: 1px solid rgba(255,255,255,.06); }
+
+/* FIELD MAP */
+.field-map { background: #f5f1eb; border: 1px solid #ddd5c6; border-radius: 28px; padding: 22px; }
+.fm-headline { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); line-height: 1.1; margin-bottom: 6px; }
+.fm-blurb { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.5; }
+.band-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.band-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; color: var(--green-dark); width: 72px; flex-shrink: 0; }
+.band-track { flex: 1; height: 20px; background: #e4dbd0; border-radius: 999px; overflow: hidden; }
+.band-fill { height: 100%; border-radius: 999px; }
+.band-right { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--stone); white-space: nowrap; min-width: 130px; }
+.band-count { font-weight: 700; }
+.band-desc { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--muted); }
+.dnf-divider { border: none; border-top: 1px dashed #c8bfb2; margin: 12px 0 10px; }
+
+/* CUT LINE */
+.cut-card { background: var(--green-dark); border: 1px solid rgba(201,151,58,.25); border-radius: 28px; padding: 22px; }
+.cut-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: rgba(255,255,255,.55); margin-bottom: 8px; }
+.cut-headline { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); line-height: 1.2; margin-bottom: 4px; }
+.cut-headline .cut-num { color: var(--gold); font-size: 26px; }
+.cut-subline { font-family: 'DM Sans', sans-serif; font-size: 11px; color: rgba(255,255,255,.75); margin-bottom: 16px; }
+.cut-zone { border-radius: 16px; padding: 14px 16px; margin-bottom: 8px; }
+.cut-zone-green { background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.25); }
+.cut-zone-red { background: rgba(239,68,68,.07); border: 1px solid rgba(239,68,68,.2); }
+.cut-zone-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
+.cut-zone-label-green { color: rgba(74,222,128,.85); }
+.cut-zone-label-red { color: rgba(252,165,165,.85); }
+.cut-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.cut-pill { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
+.cut-pill-green { background: rgba(34,197,94,.15); color: rgba(134,239,172,.9); }
+.cut-pill-red { background: rgba(239,68,68,.12); color: rgba(252,165,165,.9); }
+.cut-divider { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+.cut-divider-line { flex: 1; border-top: 1.5px dashed rgba(201,151,58,.4); }
+.cut-divider-tag { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(242,200,91,.6); border: 1px solid rgba(201,151,58,.3); border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+.mini-tragedy-divider { border: none; border-top: 1px dashed rgba(201,151,58,.3); margin: 14px 0 10px; }
+.mini-tragedy { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6; }
+
+/* VILLAIN */
+.villain-card { background: linear-gradient(140deg, #6b1818, #1a0808); border-radius: 28px; padding: 22px; }
+.villain-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: rgba(255,255,255,.55); margin-bottom: 8px; }
+.villain-headline { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 8px; }
+.villain-body { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.75); margin-bottom: 18px; }
+.villain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.villain-badge-wrap { margin-bottom: 6px; }
+.villain-badge { display: inline-block; background: rgba(252,165,165,.12); color: #fca5a5; font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 3px 9px; border-radius: 20px; }
+.villain-hole-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 14px 16px; }
+.vh-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+.vh-hole-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--white); }
+.vh-par-si { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.55); }
+.vh-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin-bottom: 10px; }
+.vh-stat-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.vh-stat-label { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,.65); }
+.vh-stat-value-hero { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 900; color: #fca5a5; }
+.vh-stat-value { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: rgba(252,165,165,.8); }
+
+/* GREEN LIGHT */
+.green-light-card { background: #f0f7f3; border: 1px solid #b8d9c4; border-radius: 28px; padding: 22px; }
+.gl-headline { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); line-height: 1.1; margin-bottom: 8px; }
+.gl-body { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #4a5a50; margin-bottom: 14px; }
+.gl-stats { display: flex; gap: 8px; }
+.gl-stat-pill { flex: 1; background: #ffffff; border: 1px solid #b8d9c4; border-radius: 20px; padding: 12px 0; text-align: center; }
+.gl-stat-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 4px; }
+.gl-stat-value { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 900; color: var(--green-mid); }
+
+/* CHAOS CARD */
+.chaos-card { background: var(--white); border: 2px solid #f0c060; border-radius: 28px; padding: 22px; position: relative; overflow: hidden; }
+.chaos-headline { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--green-dark); line-height: 1.1; margin-bottom: 10px; }
+.chaos-body { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.65; color: #5a5148; margin-bottom: 18px; }
+.chaos-stats { display: flex; gap: 8px; }
+.chaos-stat-pill { flex: 1; background: #f9f5eb; border: 1px solid #e8d8a0; border-radius: 20px; padding: 12px 0; text-align: center; }
+.chaos-stat-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 4px; }
+.chaos-stat-value { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 900; color: var(--stone); }
+.chaos-arc-label { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; }
+.arc-recovery { background: rgba(34,197,94,.1); color: #15803d; border: 1px solid rgba(34,197,94,.25); }
+.arc-collapse  { background: rgba(239,68,68,.08); color: #b91c1c; border: 1px solid rgba(239,68,68,.2); }
+.chaos-divider { border: none; border-top: 1px dashed #e0d5b8; margin: 20px 0; }
+
+/* BIRDIE COUNTER */
+.birdie-card { background: #fdf3d8; border: 2px solid #e8c876; border-radius: 28px; padding: 28px 22px 22px; text-align: center; }
+.birdie-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: #b07d2a; margin-bottom: 4px; }
+.birdie-count { font-family: 'Cormorant Garamond', serif; font-size: 88px; font-weight: 700; color: #b07d2a; line-height: 1; margin-bottom: 4px; }
+.birdie-made { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: #4a4038; margin-bottom: 4px; }
+.birdie-season { font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9a8f85; margin-bottom: 14px; }
+.birdie-divider { width: 40px; height: 1px; background: #e0d5c5; margin: 0 auto 12px; }
+.birdie-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: #9a8f85; }
+
+/* QUIETLY NOTED */
+.qn-card { background: var(--stone); border: 1px solid var(--stone); border-radius: 28px; padding: 22px; }
+.qn-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: rgba(255,255,255,.55); margin-bottom: 4px; }
+.qn-subhead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 22px; }
+.qn-item { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 22px; }
+.qn-item:last-child { margin-bottom: 0; }
+.qn-stat { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--gold); line-height: 1; width: 64px; flex-shrink: 0; text-align: center; }
+.qn-stat-sm { font-size: 26px; padding-top: 6px; }
+.qn-stat-xs { font-size: 20px; padding-top: 9px; }
+.qn-text { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.8); padding-top: 6px; }
+
+/* NOTICE BOARD */
+.notice-card { background: var(--gold-pale); border: 1px solid #e8c876; border-radius: 28px; padding: 22px; }
+.notice-subhead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+.notice-item { display: flex; gap: 12px; align-items: flex-start; padding: 11px 0; border-top: 1px solid #ecd9a6; }
+.notice-item:first-of-type { border-top: none; padding-top: 2px; }
+.notice-dot { width: 7px; height: 7px; border-radius: 50%; background: #b07d2a; flex: 0 0 auto; margin-top: 7px; }
+.notice-text { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #4a4038; }
+.notice-text strong { color: var(--green-dark); font-weight: 700; }
+
+/* FORM WATCH */
+.form-card { background: var(--cream); border: 1px solid #e4dbd0; border-radius: 28px; padding: 22px; }
+.form-headline { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--green-dark); margin-bottom: 6px; line-height: 1.1; }
+.form-body { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #5a5148; }
+.form-divider { border: none; border-top: 1px solid #e4dbd0; margin: 14px 0; }
+
+/* SHARPSHOOTER */
+.sharp-card { background: #f0f7f3; border: 1px solid #b8d9c4; border-radius: 28px; padding: 22px; }
+.sharp-headline { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); line-height: 1.1; margin-bottom: 8px; }
+.sharp-body { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.65; color: #5a5148; }
+
+/* FINAL WORD */
+.final-card { background: var(--green-dark); border: 1px solid rgba(201,151,58,.3); border-radius: 28px; padding: 28px 24px 20px; }
+.final-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+.final-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 27px; font-weight: 400; color: rgba(255,255,255,.88); line-height: 1.35; margin-bottom: 16px; }
+.final-next { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(255,255,255,.65); margin-bottom: 20px; line-height: 1.5; text-align: center; }
+.final-footer { font-family: 'DM Sans', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.45); border-top: 1px solid rgba(255,255,255,.08); padding-top: 14px; text-align: center; }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .page { margin: 0; border-radius: 0; }
+  .masthead { padding: 28px 20px 18px; }
+  .masthead-title { font-size: 42px; }
+  .card, .winner-card, .cut-card, .villain-card, .chaos-card,
+  .birdie-card, .qn-card, .notice-card, .form-card, .sharp-card, .final-card,
+  .green-light-card, .headline-event-card, .field-map, .cta-card { padding: 18px; }
+  .winner-headline { font-size: 36px; }
+  .villain-grid { grid-template-columns: 1fr; }
+}
+.eyebrow, .winner-name, .winner-eyebrow, .cut-eyebrow, .villain-eyebrow, .qn-eyebrow, .final-eyebrow { display: flex; align-items: center; gap: 8px; }
+.masthead-mark { display: block; margin: 0 auto 12px; }
+.birdie-glyph { display: block; margin: 0 auto 10px; }
+
+/* EPISODE NAV + SUBSCRIBE CTA (web only) */
+.epnav { background: var(--green-dark); display: flex; justify-content: space-between; align-items: center; padding: 12px 22px; }
+.epnav-brand { display: flex; align-items: center; gap: 9px; font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--cream); text-decoration: none; }
+.epnav-brand em { font-style: italic; color: var(--gold); }
+.epnav-link { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .05em; color: rgba(255,255,255,.7); text-decoration: none; }
+.epnav-link:hover { color: #fff; }
+.cta-card { background: var(--white); border: 1px solid #e4dbd0; border-radius: 28px; padding: 32px 26px; text-align: center; }
+.close-line { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: #4a4038; margin-bottom: 14px; }
+.close-pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; padding: 13px 28px; border-radius: 999px; text-decoration: none; background: var(--gold); border: 2px solid var(--green-dark); color: var(--green-dark); cursor: pointer; }
+.close-pill:hover { opacity: .9; }
+.close-ic { width: 16px; height: 16px; vertical-align: -2px; }
+.close-divider { width: 54px; height: 1px; background: #e4dbd0; margin: 18px auto; }
+.share-feedback { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--green-light); margin-top: 10px; min-height: 14px; }
+.close-more { display: block; margin-top: 22px; font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--muted); text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="epnav">
+  <a class="epnav-brand" href="/"><svg viewBox="0 0 144 126" width="22" height="19" aria-hidden="true"><path d="M14,56 C14,28 40,8 72,8 C104,8 130,28 130,56 C130,84 104,104 72,104 C64,104 56,103 49,100 L20,118 L31,92 C20,83 14,70 14,56 Z" fill="none" stroke="#f2c85b" stroke-width="7" stroke-linejoin="round"/><line x1="72" y1="62" x2="72" y2="26" stroke="#f2c85b" stroke-width="7" stroke-linecap="round"/><path d="M72,26 L98,34 L72,42 Z" fill="#f2c85b"/></svg><span>Scorecard <em>Stories</em></span></a>
+  <a class="epnav-link" href="/balgowlah/">All episodes &rarr;</a>
+</div>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <svg class="masthead-mark" viewBox="0 0 144 126" width="44" height="38.5" aria-hidden="true"><path d="M14,56 C14,28 40,8 72,8 C104,8 130,28 130,56 C130,84 104,104 72,104 C64,104 56,103 49,100 L20,118 L31,92 C20,83 14,70 14,56 Z" fill="none" stroke="#0e3322" stroke-width="5" stroke-linejoin="round"/><line x1="72" y1="62" x2="72" y2="26" stroke="#0e3322" stroke-width="5" stroke-linecap="round"/><path d="M72,26 L96,33.5 L72,41 Z" fill="#b07d2a"/></svg>
+    <div class="masthead-title">Scorecard <em>Stories</em></div>
+    <div class="masthead-tagline">The weekly dramas, disasters and heroics of club competition golf.</div>
+    <div class="club-row">
+      <div class="club-rule"></div>
+      <div class="club-name">Balgowlah Golf Club</div>
+      <div class="club-rule"></div>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Episode 8</span>
+      <span class="badge">11 July 2026</span>
+      <span class="badge badge-format">Stableford</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-pill">
+        <div class="stat-number">88</div>
+        <div class="stat-label">Field</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-number">40</div>
+        <div class="stat-label">Winning Pts</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-number">29.4</div>
+        <div class="stat-label">Field Avg</div>
+      </div>
+    </div>
+
+    
+    <!-- HEADLINE EVENT -->
+    <section class="headline-event-card">
+      <div class="he-emoji"><svg viewBox="0 0 24 24" width="40" height="40" style="color:#f2c85b" aria-label="Hole in one" role="img"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5,18 Q12,15.4 20.5,18"/><line x1="12" y1="16.6" x2="12" y2="4"/><path d="M12,4 L18.4,6 L12,8 Z" fill="currentColor" stroke="none"/><ellipse cx="12" cy="17.7" rx="2.5" ry="0.9"/><circle cx="12" cy="16.2" r="1.5"/></g></svg></div>
+      <div class="he-headline">One swing at the 17th</div>
+      <div class="he-body">
+        <p>Graeme Smith stood on the 17th, a par 3, and did the thing every golfer has rehearsed in their head a thousand times. One swing, and the next thing anyone knew the ball was in the hole. A hole-in-one, confirmed, and drinks presumably accounted for.</p><p>It carried him to 4th on 37 points, his first top-10 of the season. Some Saturdays the game takes. This one, for Graeme, gave.</p>
+      </div>
+    </section>
+    
+
+    
+
+    <!-- WINNER STORY -->
+    <section class="winner-card">
+      <div class="winner-name"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#b07d2a;flex:0 0 auto" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"><path d="M8,4.5 h8 v4.5 a4,4 0 0 1 -8,0 Z"/><path d="M8,5.5 H5.2 a2.8,2.8 0 0 0 3,3.6"/><path d="M16,5.5 h2.8 a2.8,2.8 0 0 1 -3,3.6"/><line x1="12" y1="13.3" x2="12" y2="17"/><line x1="8.8" y1="18.8" x2="15.2" y2="18.8"/></g></svg> Winner Story</div>
+      <div class="winner-headline">The only 40 on the property</div>
+      <div class="winner-body">
+        <p><strong>Avery Ellis</strong> posted 40 points off 33, a full 10.6 clear of a field average of 29.4, and still only had one to spare over Phil Moreton's 39. That is the top of this board in a sentence.</p><p>It wasn't spotless either. A 7 at the 4th was worth a single point and there was a pickup on the card. Ellis just out-scored the damage, took 4 points at the 14th, and came home in 21 after going out in 19.</p>
+      </div>
+
+      <!-- LEADERBOARD -->
+      <div class="leaderboard">
+        <div class="lb-header">
+          <div>
+            <div class="lb-title">Leaderboard</div>
+            <div class="lb-subtitle">11 July 2026 &middot; Balgowlah GC &middot; Stableford</div>
+          </div>
+          <div class="lb-badge">Top 10</div>
+        </div>
+        <div class="lb-col-headers">
+          <span>Pos</span><span>Player</span><span style="text-align:right">Pts</span>
+        </div>
+        
+        <div class="lb-row" style="opacity:1.0">
+          <div class="lb-pos"><div class="lb-pos-circle">1</div></div>
+          <div><div class="lb-player-name">Avery Ellis</div><div class="lb-hcp-badge">hcp 33</div></div>
+          <div class="lb-pts">40</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:1.0">
+          <div class="lb-pos"><div class="lb-pos-num">2</div></div>
+          <div><div class="lb-player-name">Phil Moreton</div><div class="lb-hcp-badge">hcp 21</div></div>
+          <div class="lb-pts">39</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:1.0">
+          <div class="lb-pos"><div class="lb-pos-num">3</div></div>
+          <div><div class="lb-player-name">Stu McPhail</div><div class="lb-hcp-badge">hcp 7</div></div>
+          <div class="lb-pts">38</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:0.95">
+          <div class="lb-pos"><div class="lb-pos-num">4</div></div>
+          <div><div class="lb-player-name">Graeme Smith</div><div class="lb-hcp-badge">hcp 13</div></div>
+          <div class="lb-pts">37</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:0.95">
+          <div class="lb-pos"><div class="lb-pos-num">5</div></div>
+          <div><div class="lb-player-name">Ross Humphreys</div><div class="lb-hcp-badge">hcp 8</div></div>
+          <div class="lb-pts">37</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:0.88">
+          <div class="lb-pos"><div class="lb-pos-num">6</div></div>
+          <div><div class="lb-player-name">Andrew Revill</div><div class="lb-hcp-badge">hcp 10</div></div>
+          <div class="lb-pts">37</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:0.80">
+          <div class="lb-pos"><div class="lb-pos-num">7</div></div>
+          <div><div class="lb-player-name">Jodie McPherson</div><div class="lb-hcp-badge">hcp 29</div></div>
+          <div class="lb-pts">37</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:0.72">
+          <div class="lb-pos"><div class="lb-pos-num">8</div></div>
+          <div><div class="lb-player-name">Nic Andrews</div><div class="lb-hcp-badge">hcp 10</div></div>
+          <div class="lb-pts">37</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:0.65">
+          <div class="lb-pos"><div class="lb-pos-num">9</div></div>
+          <div><div class="lb-player-name">Corin Bartley</div><div class="lb-hcp-badge">hcp 10</div></div>
+          <div class="lb-pts">37</div>
+        </div>
+        
+        <div class="lb-row" style="opacity:0.58">
+          <div class="lb-pos"><div class="lb-pos-num">10</div></div>
+          <div><div class="lb-player-name">Chris Hall</div><div class="lb-hcp-badge">hcp 42</div></div>
+          <div class="lb-pts">37</div>
+        </div>
+        
+        
+        <div class="lb-countback-note">Ross Humphreys makes it back-to-back top-10s, 3rd last week and 5th this time. Nobody is talking about him yet, which is usually when it matters.</div>
+        
+      </div>
+    </section>
+
+    <!-- FIELD MAP -->
+    <section class="field-map">
+      <div class="eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#b07d2a;flex:0 0 auto" aria-hidden="true"><g stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="15" y2="12"/><line x1="4" y1="17" x2="10" y2="17"/></g></svg> Field Map</div>
+      <div class="fm-headline">One up top, a crowd in the low 30s</div>
+      <div class="fm-blurb">The cut fell at 30 and 47 of the 88 starters got inside it, eight of them sitting right on the number.</div>
+      
+      <div class="band-row">
+        <div class="band-label">40+ pts</div>
+        <div class="band-track"><div class="band-fill" style="width:1.2%;background:#c9973a;"></div></div>
+        <div class="band-right"><span class="band-count">1</span> <span class="band-desc">&middot; a party of one</span></div>
+      </div>
+      
+      <div class="band-row">
+        <div class="band-label">35–39 pts</div>
+        <div class="band-track"><div class="band-fill" style="width:18.6%;background:#174a31;"></div></div>
+        <div class="band-right"><span class="band-count">16</span> <span class="band-desc">&middot; knocking on the door</span></div>
+      </div>
+      
+      <div class="band-row">
+        <div class="band-label">30–34 pts</div>
+        <div class="band-track"><div class="band-fill" style="width:34.9%;background:#1e5c3d;"></div></div>
+        <div class="band-right"><span class="band-count">30</span> <span class="band-desc">&middot; the safe middle</span></div>
+      </div>
+      
+      <div class="band-row">
+        <div class="band-label">25–29 pts</div>
+        <div class="band-track"><div class="band-fill" style="width:26.7%;background:#2d7a55;"></div></div>
+        <div class="band-right"><span class="band-count">23</span> <span class="band-desc">&middot; one shot shy all day</span></div>
+      </div>
+      
+      <div class="band-row">
+        <div class="band-label">Under 25</div>
+        <div class="band-track"><div class="band-fill" style="width:18.6%;background:#9e9690;"></div></div>
+        <div class="band-right"><span class="band-count">16</span> <span class="band-desc">&middot; one to forget</span></div>
+      </div>
+      
+      
+      <hr class="dnf-divider">
+      <div class="band-row">
+        <div class="band-label">DNF</div>
+        <div class="band-track"><div class="band-fill" style="width:2.3%;background:#9e9690;opacity:0.5;"></div></div>
+        <div class="band-right"><span class="band-count">2</span> <span class="band-desc">&middot; did not finish</span></div>
+      </div>
+      
+    </section>
+
+    <!-- CUT LINE -->
+    <section class="cut-card">
+      <div class="cut-eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#f2c85b;flex:0 0 auto" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"><circle cx="6.5" cy="7.3" r="2.3"/><circle cx="6.5" cy="16.7" r="2.3"/><line x1="8.5" y1="8.6" x2="19.5" y2="16.4"/><line x1="8.5" y1="15.4" x2="19.5" y2="7.6"/></g></svg> Cut Line</div>
+      <div class="cut-headline">This week the cut fell at <span class="cut-num">30</span> pts.</div>
+      <div class="cut-subline">Top half of field plus ties &middot; 8 players survived right on the number</div>
+
+      <div class="cut-zone cut-zone-green">
+        <div class="cut-zone-label cut-zone-label-green">Survived on 30 pts</div>
+        <div class="cut-pills">
+          <span class="cut-pill cut-pill-green">C. Simpson</span><span class="cut-pill cut-pill-green">C. Foley</span><span class="cut-pill cut-pill-green">J. Maxwell</span><span class="cut-pill cut-pill-green">J. Thorburn</span><span class="cut-pill cut-pill-green">M. Fisher</span><span class="cut-pill cut-pill-green">M. Pribicevic</span><span class="cut-pill cut-pill-green">P. Downs</span><span class="cut-pill cut-pill-green">S. Thomson</span>
+        </div>
+      </div>
+
+      <div class="cut-divider">
+        <div class="cut-divider-line"></div>
+        <div class="cut-divider-tag">Cut &middot; 30 pts</div>
+        <div class="cut-divider-line"></div>
+      </div>
+
+      <div class="cut-zone cut-zone-red">
+        <div class="cut-zone-label cut-zone-label-red">Missed by one &middot; 29 pts</div>
+        <div class="cut-pills">
+          <span class="cut-pill cut-pill-red">A. Redmond</span><span class="cut-pill cut-pill-red">B. Beard</span><span class="cut-pill cut-pill-red">J. Roebuck</span><span class="cut-pill cut-pill-red">J. Gibbons</span>
+        </div>
+      </div>
+
+      
+      <hr class="mini-tragedy-divider">
+      <div class="mini-tragedy">Jackson Roebuck finished one point outside the cut, and he'll be thinking about the 16th, where a pickup cost him the very hole that would have saved it.</div>
+      
+    </section>
+
+    <!-- VILLAIN HOLES -->
+    <section class="villain-card">
+      <div class="villain-eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#fca5a5;flex:0 0 auto" aria-hidden="true"><circle cx="12" cy="10.5" r="6.3" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="9.7" cy="10" r="1.25" fill="currentColor"/><circle cx="14.3" cy="10" r="1.25" fill="currentColor"/><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><line x1="9.2" y1="16.4" x2="9.2" y2="19"/><line x1="12" y1="16.8" x2="12" y2="19.4"/><line x1="14.8" y1="16.4" x2="14.8" y2="19"/></g></svg> Villain Hole</div>
+      <div class="villain-headline">You have to play the 6th twice</div>
+      <div class="villain-body">The card calls them the 6th and the 15th, but it's the same argument twice, and the course won it both times. The 15th was the hardest hole on the property at 1.27 points a man with 21 wipes, and the 6th ran second at 1.31 with 21 wipes of its own. The 3rd did its usual quiet work with 18 wipes, and this week that was only good for third.</div>
+
+      <div>
+        <div class="villain-badge-wrap"><span class="villain-badge">Villain #1</span></div>
+        <div class="villain-hole-card">
+          <div class="vh-header">
+            <div class="vh-hole-name">Hole 15</div>
+            <div class="vh-par-si">Par 4 &middot; SI 2</div>
+          </div>
+          <hr class="vh-divider">
+          <div class="vh-stat-row">
+            <div class="vh-stat-label">Avg stableford pts</div>
+            <div class="vh-stat-value-hero">1.27</div>
+          </div>
+          
+          <div class="vh-stat-row">
+            <div class="vh-stat-label">Wipes</div>
+            <div class="vh-stat-value">21</div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="villain-grid">
+        
+        <div>
+          <div class="villain-badge-wrap"><span class="villain-badge">Villain #2</span></div>
+          <div class="villain-hole-card">
+            <div class="vh-header">
+              <div class="vh-hole-name">Hole 6</div>
+              <div class="vh-par-si">Par 4 &middot; SI 1</div>
+            </div>
+            <hr class="vh-divider">
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Avg stableford pts</div>
+              <div class="vh-stat-value-hero">1.31</div>
+            </div>
+            
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Wipes</div>
+              <div class="vh-stat-value">21</div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div>
+          <div class="villain-badge-wrap"><span class="villain-badge">Villain #3</span></div>
+          <div class="villain-hole-card">
+            <div class="vh-header">
+              <div class="vh-hole-name">Hole 3</div>
+              <div class="vh-par-si">Par 3 &middot; SI 3</div>
+            </div>
+            <hr class="vh-divider">
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Avg stableford pts</div>
+              <div class="vh-stat-value-hero">1.33</div>
+            </div>
+            
+            <div class="vh-stat-row">
+              <div class="vh-stat-label">Wipes</div>
+              <div class="vh-stat-value">18</div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    
+
+    <!-- CHAOS CARD -->
+    <section class="chaos-card">
+      <div class="eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#b07d2a;flex:0 0 auto" aria-hidden="true"><polyline points="3.5,16.5 8.5,7.5 13,15 20.5,5.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/></svg> Chaos Card</div>
+      
+      
+      <div class="chaos-arc-label arc-recovery">↑ Recovery</div>
+      <div class="chaos-headline">The back nine staged a rescue</div>
+      <div class="chaos-body"><strong>Chris Johnson</strong> made the turn on 13 points, a 6 at the 9th the low-water mark, and the day looked like a write-off. The back nine went for 21 and dragged him all the way up to 18th on 34. Same golfer, different nine.</div>
+      <div class="chaos-stats">
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Front Nine</div>
+          <div class="chaos-stat-value">13</div>
+        </div>
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Back Nine</div>
+          <div class="chaos-stat-value">21</div>
+        </div>
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Final Result</div>
+          <div class="chaos-stat-value">34 pts</div>
+        </div>
+      </div>
+      
+      <hr class="chaos-divider">
+      <div class="chaos-arc-label arc-collapse">↓ Collapse</div>
+      <div class="chaos-headline">The podium was right there</div>
+      <div class="chaos-body"><strong>JP Polito</strong> turned on 20 points with every reason to start thinking about the top of the board. Then the 15th took an 8 off him and the back nine gave back just 12. He still made the cut on 32, which is the kindest thing anyone said about that back nine all day.</div>
+      <div class="chaos-stats">
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Front Nine</div>
+          <div class="chaos-stat-value">20</div>
+        </div>
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Back Nine</div>
+          <div class="chaos-stat-value">12</div>
+        </div>
+        <div class="chaos-stat-pill">
+          <div class="chaos-stat-label">Final Result</div>
+          <div class="chaos-stat-value">32 pts</div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- BIRDIE COUNTER -->
+    <section class="birdie-card">
+      <svg class="birdie-glyph" viewBox="0 0 32 28" width="40" height="35" style="color:#b07d2a" aria-hidden="true"><circle cx="16" cy="14" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="16" y="18.6" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-style="italic" font-size="13" fill="currentColor" transform="rotate(-9 16 14)">3</text></svg>
+      <div class="birdie-title">Birdie Counter</div>
+      <div class="birdie-count">34</div>
+      <div class="birdie-made">birdies made this week</div>
+      <div class="birdie-season">252 birdies across the season so far</div>
+      <div class="birdie-divider"></div>
+      <div class="birdie-note">B. Raynsford and N. Andrews led the field with 3 apiece, Raynsford's coming at 2, 9 and 11, Andrews' at 10, 14 and 17.</div>
+    </section>
+
+    <!-- QUIETLY NOTED -->
+    <section class="qn-card">
+      <div class="qn-eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#f2c85b;flex:0 0 auto" aria-hidden="true"><path d="M3,12 C7,6.5 17,6.5 21,12 C17,17.5 7,17.5 3,12 Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg> Quietly Noted</div>
+      <div class="qn-subhead">Stats that stood out. Things that went unannounced.</div>
+      
+      <div class="qn-item">
+        <div class="qn-stat qn-stat-sm">6→84</div>
+        <div class="qn-text">Tim Plunkett was 6th last week. This week he was 84th. The game remains undefeated.</div>
+      </div>
+      
+      <div class="qn-item">
+        <div class="qn-stat">2</div>
+        <div class="qn-text">Doug Hanshaw holed out for 2 at the last, a par 4, the only eagle of the day. There are worse ways to walk to the clubhouse.</div>
+      </div>
+      
+      <div class="qn-item">
+        <div class="qn-stat qn-stat-xs">2 & 11</div>
+        <div class="qn-text">Steve Thomson birdied the 2nd and the 11th. Same hole both times around. Find the one you like and keep ordering it.</div>
+      </div>
+      
+    </section>
+
+    
+    <!-- FORM WATCH -->
+    <section class="form-card">
+      <div class="eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#b07d2a;flex:0 0 auto" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><polyline points="4,17.5 9.5,11.5 13,14 19.5,6.8"/><polyline points="15.6,6.2 19.9,6.4 19.7,10.7"/></g></svg> Form Watch</div>
+      <div class="form-headline">The bankers</div>
+      
+      
+      <div class="form-body"><strong>Stu McPhail</strong> has now made eight cuts in a row, the longest run going, and did it this week with the steadiest card in the field, 19 out and 19 back for 3rd on 38.</div>
+      
+      <hr class="form-divider">
+      <div class="form-body"><strong>Andrew Revill</strong>, the Episode 6 winner, backed it up with 6th on 37. The win is starting to look less like a visit and more like a residence.</div>
+      
+    </section>
+    
+
+    
+    <!-- SHARPSHOOTER -->
+    <section class="sharp-card">
+      <div class="eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#2d7a55;flex:0 0 auto" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg> Sharpshooter</div>
+      <div class="sharp-headline">Three over the card</div>
+      <div class="sharp-body">Strip the handicaps away and Mark Bradley owned the golf. Off a mark of 3, he went round 3 over the card, the sharpest ball-striking of the day, worth 36 points and 13th.</div>
+    </section>
+    
+
+    
+    <!-- NOTICE BOARD -->
+    <section class="notice-card">
+      <div class="eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#b07d2a;flex:0 0 auto" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.6h6l-1 5 3 3v1.4H7v-1.4l3-3z"/><line x1="12" y1="14" x2="12" y2="20.4"/></g></svg> The Notice Board</div>
+      <div class="notice-subhead">Names from across the field. The week's milestones and season threads.</div>
+      
+      <div class="notice-item"><span class="notice-dot"></span><div class="notice-text"><strong>Grant Birse</strong>'s three-cut run ended on 28. A thread to pick straight back up next Saturday.</div></div>
+      
+      <div class="notice-item"><span class="notice-dot"></span><div class="notice-text"><strong>James Matheson-Macdonald</strong> put up a season-best 34, well clear of his previous best of 27, and banked a cut with it.</div></div>
+      
+      <div class="notice-item"><span class="notice-dot"></span><div class="notice-text"><strong>Chris Hall</strong> picked a fine week to turn up for the first time, 37 points and 10th on debut.</div></div>
+      
+    </section>
+    
+
+    <!-- FINAL WORD -->
+    <section class="final-card">
+      <div class="final-eyebrow"><svg viewBox="0 0 24 24" width="17" height="17" style="color:#f2c85b;flex:0 0 auto" aria-hidden="true"><path d="M4,11 C4,6.5 7.6,3.5 12,3.5 C16.4,3.5 20,6.5 20,11 C20,15.3 16.4,18 12,18 C11,18 10,17.9 9.1,17.6 L5.2,20.3 L6.7,16.7 C5,15.3 4,13.3 4,11 Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="12" y1="12.6" x2="12" y2="7.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12,7.2 L15.8,8.4 L12,9.6 Z" fill="currentColor"/></svg> Final Word</div>
+      <div class="final-quote">Avery Ellis, 40 points and one clear. Everyone else spent the day negotiating with the course. Avery didn't ask.</div>
+      <div class="final-next">Same place next Saturday, and the 6th will be waiting. Twice.</div>
+      <div class="final-footer">Scorecard Stories &middot; Balgowlah Golf Club | Episode 8 | Unsubscribe</div>
+    </section>
+
+      <!-- CLOSING CARD (web only): share + subscribe -->
+    <section class="cta-card">
+      <div class="close-line">Know a golfer who'd get a kick out of this?</div>
+      <a class="close-pill" href="#" onclick="shareEpisode(event)"><svg class="close-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg> Share this episode</a>
+      <div class="share-feedback" id="shareMsg"></div>
+      <div class="close-divider"></div>
+      <div class="close-line">Not subscribed yet?</div>
+      <a class="close-pill" href="/balgowlah/#subscribe"><svg class="close-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Get it in your inbox</a>
+      <a class="close-more" href="/balgowlah/">Browse all episodes</a>
+    </section>
+
+  </div><!-- /content -->
+</div><!-- /page -->
+  <!-- Share button: native share sheet on mobile, copy-link fallback on desktop -->
+  <script>
+  function shareEpisode(e){
+    e.preventDefault();
+    var url = window.location.href, title = document.title;
+    if (navigator.share) {
+      navigator.share({title: title, url: url}).catch(function(){});
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function(){
+        var m = document.getElementById('shareMsg');
+        if (m) { m.textContent = 'Link copied. Send it to a mate.'; setTimeout(function(){ m.textContent=''; }, 4000); }
+      });
+    } else {
+      window.prompt('Copy this link:', url);
+    }
+  }
+  </script>
+  <!-- GoatCounter privacy-friendly analytics -->
+  <script data-goatcounter="https://scorecardstories.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
